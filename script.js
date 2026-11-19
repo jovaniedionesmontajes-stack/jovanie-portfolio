@@ -83,8 +83,9 @@
   function compose() {
     var type = form.querySelector('input[name=type]:checked').value;
     var extra = form.message.value.trim();
+    var who = document.getElementById('f-name').value.trim();
     var subject = 'Project inquiry: ' + type;
-    var body = 'Hi Jovanie,\n\nI need help with: ' + type + '.\n' + (extra ? '\n' + extra + '\n' : '') + '\nPlease reply to this email. Thank you!\n\nMy name: ';
+    var body = 'Hi Jovanie,\n\nI need help with: ' + type + '.\n' + (extra ? '\n' + extra + '\n' : '') + '\nPlease reply to this email. Thank you!\n\nMy name: ' + who;
     return { subject: subject, body: body };
   }
   function refresh() {
