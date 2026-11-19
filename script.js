@@ -199,5 +199,41 @@
     });
   }
 
+  /* Seamless marquees: clone each group once, hide the copy from screen readers */
+  $$('.marquee').forEach(function (m) { var g = $('.group', m); if (!g) return; var cl = g.cloneNode(true); cl.setAttribute('aria-hidden', 'true'); m.appendChild(cl); });
+
+  /* Particle network background (skipped for reduced motion; pauses when tab hidden) */
+  var net = $('#net');
+  if (net && net.getContext && !reduce) {
+    var cx = net.getContext('2d'), W = 0, H = 0, pts = [], mouse = { x: -999, y: -999 }, raf = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5), tmr;
+    function size() {
+      W = window.innerWidth; H = window.innerHeight; net.width = W * dpr; net.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(70, Math.round(W * H / 24000)); pts = [];
+      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 });
+    }
+    function frame() {
+      var dark = root.dataset.theme === 'dark', col = dark ? '143,209,174' : '28,70,54', L = 130;
+      cx.clearRect(0, 0, W, H);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i]; p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+        cx.fillStyle = 'rgba(' + col + ',.55)'; cx.beginPath(); cx.arc(p.x, p.y, 1.6, 0, 6.283); cx.fill();
+        for (var k = i + 1; k < pts.length; k++) {
+          var q = pts[k], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
+          if (d < L * L) { cx.strokeStyle = 'rgba(' + col + ',' + (.22 * (1 - Math.sqrt(d) / L)) + ')'; cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(q.x, q.y); cx.stroke(); }
+        }
+        var mx = p.x - mouse.x, my = p.y - mouse.y, md = mx * mx + my * my;
+        if (md < 160 * 160) { cx.strokeStyle = 'rgba(240,163,27,' + (.5 * (1 - Math.sqrt(md) / 160)) + ')'; cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(mouse.x, mouse.y); cx.stroke(); }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start() { if (!raf) raf = requestAnimationFrame(frame); }
+    function stop() { cancelAnimationFrame(raf); raf = 0; }
+    size(); start();
+    window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(size, 200); });
+    window.addEventListener('pointermove', function (e) { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+    doc.addEventListener('visibilitychange', function () { if (doc.hidden) stop(); else start(); });
+  }
+
   var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 })();
