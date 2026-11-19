@@ -10,7 +10,7 @@
   /* === CHAT LINKS: fill these in and the buttons appear automatically ===
      messenger: Facebook username (opens m.me/username) | whatsapp / viber: number with country code, no + or spaces
      phone: number with country code; shows a Call / text button */
-  var CHAT = { messenger: '', whatsapp: '', viber: '', phone: '639911285139' };
+  var CHAT = { messenger: 'jhong.diones123', whatsapp: '', viber: '', phone: '639911285139' };
   var chatHTML = '';
   if (CHAT.messenger) chatHTML += '<a class="button small chat-btn" href="https://m.me/' + CHAT.messenger + '" target="_blank" rel="noopener noreferrer">Chat on Messenger</a>';
   if (CHAT.viber) chatHTML += '<a class="button small chat-btn" href="viber://chat?number=%2B' + CHAT.viber + '">Chat on Viber</a>';
