@@ -3,72 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Resume of Jovanie Montajes, web developer in Davao City.">
-<title>Resume — Jovanie Montajes</title>
+<title>Jovanie Montajes — Web Developer &amp; Internal Audit | Resume</title>
+<meta name="description" content="Resume of Jovanie Montajes, web developer and internal audit staff in Davao City, Philippines. HTML, CSS, JavaScript, Supabase, Vercel, root-cause analysis and reporting.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jovanie-portfolio.vercel.app/resume.html">
+<link rel="alternate" type="application/pdf" href="assets/Jovanie-Montajes-Resume.pdf" title="Resume (PDF)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Manrope:wght@400;500;800&display=swap" rel="stylesheet">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jovanie Montajes — Resume">
+<meta property="og:description" content="Web developer and internal audit staff in Davao City. Business websites, dashboards and internal web tools.">
+<meta property="og:url" content="https://jovanie-portfolio.vercel.app/resume.html">
+<meta property="og:image" content="https://jovanie-portfolio.vercel.app/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jovanie Montajes","jobTitle":"Web Developer","description":"Web developer and internal audit staff who builds business websites, dashboards and internal web tools.","email":"jovaniedionesmontajes@gmail.com","telephone":"+639911285139","url":"https://jovanie-portfolio.vercel.app/","address":{"@type":"PostalAddress","addressLocality":"Davao City","addressCountry":"PH"},"worksFor":{"@type":"Organization","name":"Trinitas Food Corporation"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Davao Oriental State University"},"knowsLanguage":["Bisaya","Tagalog","English"],"knowsAbout":["Web development","HTML","CSS","JavaScript","Responsive design","Supabase","Firebase","REST APIs","Vercel","Git","Internal audit","Root-cause analysis","Data reconciliation","Excel","Google Sheets"]}</script>
 <style>
-:root{--ink:#17201b;--muted:#4d5a52;--forest:#1c4636;--mango:#f0a31b;--line:#17201b24}
-*{box-sizing:border-box}body{margin:0;background:#ece6d8;color:var(--ink);font:16px/1.6 Manrope,system-ui,Arial,sans-serif}
-.bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:820px;margin:18px auto 0;padding:0 16px}
-.bar a,.bar button{font:700 15px inherit;font-family:inherit;padding:11px 18px;border-radius:10px;border:2px solid var(--forest);background:var(--forest);color:#fff;text-decoration:none;cursor:pointer}
-.bar a{background:transparent;color:var(--forest)}
-.page{max-width:820px;margin:16px auto 40px;background:#fff;padding:48px 52px;border-radius:6px;box-shadow:0 10px 40px #0002}
-h1{font:700 38px/1.1 Fraunces,Georgia,serif;margin:0}
-.role{color:var(--forest);font-weight:800;margin:4px 0 10px}
-.contact{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--muted);font-size:15px;padding-bottom:16px;border-bottom:3px solid var(--mango)}
-h2{font:800 13px Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);margin:26px 0 8px}
-p{margin:0 0 8px}ul{margin:0;padding-left:20px}li{margin:3px 0}
-.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:800}.row span{font-weight:500;color:var(--muted)}
-.bar a:focus-visible,.bar button:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
-ul,.row{break-inside:avoid}h2{break-after:avoid}
-.contact span{overflow-wrap:anywhere}
-@media(max-width:600px){.page{padding:28px 22px}h1{font-size:32px}}
-@media print{body{background:#fff;font-size:13px;line-height:1.5}h2{margin:16px 0 6px}h1{font-size:32px}.bar{display:none}.page{margin:0;box-shadow:none;padding:0;max-width:none}@page{margin:12mm}}
+:root{--ink:#17201b;--muted:#4d5a52;--forest:#143427;--forest2:#1c4636;--mango:#f0a31b;--paper:#fffdf8;--line:#17201b26;
+--sans:Manrope,Carlito,Calibri,Arial,sans-serif;--serif:Fraunces,"Crimson Text",Georgia,serif;--mono:ui-monospace,"DejaVu Sans Mono",Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e3d4;color:var(--ink);font:15.5px/1.55 var(--sans);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.bar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;max-width:860px;margin:18px auto 0;padding:0 16px}
+.bar .grp{display:flex;gap:10px;flex-wrap:wrap}
+.bar a,.bar button{font:800 14.5px var(--sans);padding:11px 18px;border-radius:10px;border:2px solid var(--forest2);background:var(--forest2);color:#fff;text-decoration:none;cursor:pointer}
+.bar a.ghost,.bar button.ghost{background:transparent;color:var(--forest2)}
+.bar a:focus-visible,.bar button:focus-visible,.page a:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
+.page{max-width:860px;margin:16px auto 44px;background:var(--paper);border-radius:6px;box-shadow:0 12px 40px #0003;overflow:hidden}
+/* header: ledger style — dark band, double rule */
+.head{background:var(--forest);color:#f3efe3;padding:36px 52px 26px;position:relative}
+.head::after{content:"";position:absolute;left:52px;right:52px;bottom:0;height:7px;border-top:2px solid var(--mango);border-bottom:2px solid var(--mango)}
+.head h1{font:700 40px/1.05 var(--serif);margin:0;letter-spacing:-.01em}
+.head .role{margin:6px 0 14px;font:800 14px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mango)}
+.contact{display:flex;flex-wrap:wrap;gap:2px 22px;margin:0 0 10px;padding:0;list-style:none;font-size:14.5px}
+.contact a{color:inherit;text-decoration:none;border-bottom:1px solid #f3efe355}
+.body{padding:12px 52px 44px}
+section{margin-top:22px;break-inside:avoid-page}
+h2{display:flex;align-items:center;gap:12px;font:800 12.5px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--forest2);margin:0 0 10px}
+h2::before{content:"";width:10px;height:10px;background:var(--mango);transform:rotate(45deg);flex:none}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+p{margin:0 0 8px}
+ul{margin:4px 0 0;padding-left:19px}li{margin:3px 0}
+.entry{margin-top:14px}.entry:first-of-type{margin-top:0}
+.line{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+h3{font:800 16px/1.3 var(--sans);margin:0}
+.when{font:600 12.5px var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+.org{margin:0 0 2px;color:var(--forest2);font-weight:700}
+.stack{margin:6px 0 0;font-size:14px;color:var(--muted)}.stack b{color:var(--ink)}
+.kw{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none}
+.kw li{margin:0;padding:3px 10px;border:1px solid var(--line);border-radius:99px;font-size:13.5px;font-weight:600;background:#fff}
+dl.skills{display:grid;grid-template-columns:190px 1fr;gap:6px 18px;margin:0}
+dl.skills dt{font-weight:800;color:var(--forest2)}dl.skills dd{margin:0}
+@media(max-width:640px){.head{padding:28px 22px 22px}.head::after{left:22px;right:22px}.head h1{font-size:32px}.body{padding:8px 22px 32px}dl.skills{grid-template-columns:1fr;gap:0}dl.skills dd{margin-bottom:8px}}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;font-size:11.4px;line-height:1.42}
+  .bar{display:none}
+  .page{margin:0;max-width:none;border-radius:0;box-shadow:none}
+  .head{padding:22px 14mm 18px}.head::after{left:14mm;right:14mm}.head h1{font-size:30px}.head .role{margin:4px 0 10px;font-size:11.5px}.contact{font-size:11.5px}
+  .body{padding:4px 14mm 10mm}
+  section{margin-top:12px}h2{font-size:10.5px;margin-bottom:6px}h3{font-size:13px}.when{font-size:10.5px}.stack{font-size:11px}.kw li{font-size:10.8px;padding:2px 8px}
+  .entry{margin-top:9px}ul{margin-top:2px}li{margin:2px 0}
+  dl.skills{grid-template-columns:150px 1fr;gap:3px 14px}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
-<div class="bar"><a href="index.html">← Back to portfolio</a><button type="button" onclick="window.print()">Download / Print PDF</button></div>
+<nav class="bar" aria-label="Resume actions">
+  <a class="ghost" href="index.html">← Back to portfolio</a>
+  <div class="grp">
+    <a href="assets/Jovanie-Montajes-Resume.pdf" download>Download PDF</a>
+    <button type="button" class="ghost" onclick="window.print()">Print</button>
+  </div>
+</nav>
+
 <main class="page">
-  <h1>Jovanie Montajes</h1>
-  <p class="role">Web Developer · Business Websites &amp; Web Apps</p>
-  <div class="contact"><span>Davao City, Philippines</span><span>jovaniedionesmontajes@gmail.com</span><span>0991 128 5139</span><span>Bisaya · Tagalog · English</span></div>
+  <header class="head">
+    <h1>Jovanie Montajes</h1>
+    <p class="role">Web Developer · Internal Audit</p>
+    <ul class="contact">
+      <li>Davao City, Philippines</li>
+      <li><a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a></li>
+      <li><a href="tel:+639911285139">0991 128 5139</a></li>
+      <li><a href="https://jovanie-portfolio.vercel.app/">jovanie-portfolio.vercel.app</a></li>
+    </ul>
+  </header>
 
-  <h2>Summary</h2>
-  <p>I build business websites and simple web tools for small businesses. By day I work in internal audit, finding out why numbers and reports don't match, so what I build is accurate and easy for staff to use. I plan first, build with AI-assisted tools, then test and fix everything myself. As a licensed teacher, I explain every step in plain words.</p>
+  <div class="body">
+    <section aria-labelledby="h-summary">
+      <h2 id="h-summary">Professional Summary</h2>
+      <p>Web developer and internal audit professional who builds business websites, dashboards and internal web tools. Traces report discrepancies to their root cause every day across purchasing, inventory and item transactions, then applies the same discipline to software: plan first, build with AI-assisted development tools, and personally test and debug every release. Licensed teacher (LET passer) who explains technical work in plain language to non-technical teams. Works in Bisaya, Tagalog and English.</p>
+    </section>
 
-  <h2>Why clients work with me</h2>
-  <ul>
-    <li><strong>I find the real problem first.</strong> I trace report errors to their root cause every day, so I ask the right questions before I build.</li>
-    <li><strong>I understand how teams work.</strong> I work with operations, inventory and IT staff, so my tools fit how people actually do their jobs.</li>
-    <li><strong>No tech talk.</strong> Teaching background: I explain clearly to people who are not technical.</li>
-    <li><strong>I test before you see it.</strong> I check on phone and computer, and fix problems before delivery.</li>
-  </ul>
+    <section aria-labelledby="h-core">
+      <h2 id="h-core">Core Competencies</h2>
+      <ul class="kw">
+        <li>Web Development</li><li>Front-End Development</li><li>Responsive Design</li><li>Dashboard Development</li><li>Database Integration</li><li>Authentication &amp; Role-Based Access</li><li>Root-Cause Analysis</li><li>Data Reconciliation</li><li>Variance Tracking</li><li>Internal Audit</li><li>Management Reporting</li><li>Cross-Team Collaboration</li>
+      </ul>
+    </section>
 
-  <h2>Projects</h2>
-  <div class="row">EOD Monitoring Matrix <span>Live web app · Personal project</span></div>
-  <ul>
-    <li>Planned, designed and built a web app where branches send end-of-day reports and managers see differences, rankings and follow-ups.</li>
-    <li>Includes branch comparison, monthly trends, void transactions, task tracking, and login with different access levels.</li>
-    <li>Built with Supabase, deployed on Vercel. Live: staff-monitoring-eod.vercel.app (login required)</li>
-  </ul>
-  <div class="row" style="margin-top:12px">Dental Clinic Website <span>Sample site</span></div>
-  <ul><li>Mobile-friendly clinic site with services, hours and a simple appointment request form.</li></ul>
+    <section aria-labelledby="h-exp">
+      <h2 id="h-exp">Work Experience</h2>
+      <article class="entry">
+        <div class="line"><h3>Internal Audit Staff</h3><span class="when"><time datetime="2026-02">Feb 2026</time> – Present</span></div>
+        <p class="org">Trinitas Food Corporation</p>
+        <ul>
+          <li>Audit daily operational reports for errors across purchase orders, inventory and item transactions, and identify the root cause of each discrepancy.</li>
+          <li>Work with operations, inventory and IT teams to resolve recurring issues permanently rather than correct them case by case.</li>
+          <li>Maintain daily audit logs and prepare clear summaries in Excel and Google Sheets for management review.</li>
+        </ul>
+      </article>
+    </section>
 
-  <h2>Work background</h2>
-  <div class="row">Internal Audit Staff, Trinitas Food Corporation <span>Feb 2026 – Present</span></div>
-  <ul>
-    <li>Check daily reports for mistakes across purchase orders, inventory and item transactions, and find the cause of each.</li>
-    <li>Work with operations, inventory and IT teams to fix repeating problems for good.</li>
-    <li>Keep daily logs and prepare clear summaries in Excel and Google Sheets for management.</li>
-  </ul>
+    <section aria-labelledby="h-proj">
+      <h2 id="h-proj">Projects</h2>
+      <article class="entry">
+        <div class="line"><h3>EOD Monitoring Matrix — Business Monitoring Web App</h3><span class="when">Live · Personal project</span></div>
+        <ul>
+          <li>Planned, designed and built end to end: user interface, database setup, login with role-based access levels, and deployment.</li>
+          <li>Branches submit end-of-day reports; managers see variances, branch rankings and a prioritized list of what to follow up first.</li>
+          <li>Features include branch comparison, monthly trend breakdown, void transaction monitoring and an action tracker for follow-up tasks.</li>
+        </ul>
+        <p class="stack"><b>Stack:</b> JavaScript, HTML, CSS, Supabase, Vercel · <b>Live:</b> staff-monitoring-eod.vercel.app (login required)</p>
+      </article>
+      <article class="entry">
+        <div class="line"><h3>Dental Clinic Website</h3><span class="when">Sample site</span></div>
+        <ul><li>Mobile-friendly clinic website with services, opening hours and a simple appointment request form.</li></ul>
+        <p class="stack"><b>Stack:</b> HTML, CSS, JavaScript</p>
+      </article>
+    </section>
 
-  <h2>Skills</h2>
-  <p><strong>Web:</strong> HTML, CSS, JavaScript, responsive design. <strong>Data &amp; login:</strong> Supabase, Firebase, APIs, webhooks. <strong>Publishing:</strong> Git, GitHub, Vercel, testing, bug fixing. <strong>AI tools:</strong> Claude, ChatGPT, Gemini, VS Code, Cursor. <strong>Reports:</strong> Excel, Google Sheets, Asana.</p>
+    <section aria-labelledby="h-skills">
+      <h2 id="h-skills">Technical Skills</h2>
+      <dl class="skills">
+        <dt>Front-End</dt><dd>HTML, CSS, JavaScript, responsive design</dd>
+        <dt>Data &amp; Back-End</dt><dd>Supabase, Firebase, APIs, webhooks, authentication</dd>
+        <dt>Deployment &amp; Tools</dt><dd>Git, GitHub, Vercel, VS Code, Cursor, testing and bug fixing</dd>
+        <dt>AI-Assisted Development</dt><dd>Claude, ChatGPT, Gemini</dd>
+        <dt>Reporting &amp; Productivity</dt><dd>Excel, Google Sheets, Asana</dd>
+      </dl>
+    </section>
 
-  <h2>Education</h2>
-  <div class="row">BS Secondary Education, Mathematics <span>2024 – 2025</span></div>
-  <p>Davao Oriental State University · Licensure Examination for Teachers (LET) passer</p>
+    <section aria-labelledby="h-edu">
+      <h2 id="h-edu">Education &amp; Licensure</h2>
+      <article class="entry">
+        <div class="line"><h3>Bachelor of Secondary Education, Mathematics</h3><span class="when">2024 – 2025</span></div>
+        <p class="org">Davao Oriental State University</p>
+      </article>
+      <article class="entry">
+        <div class="line"><h3>Licensure Examination for Teachers (LET)</h3><span class="when">Passer</span></div>
+      </article>
+    </section>
+
+    <section aria-labelledby="h-lang">
+      <h2 id="h-lang">Languages</h2>
+      <p>Bisaya · Tagalog · English</p>
+    </section>
+  </div>
 </main>
 </body>
 </html>
