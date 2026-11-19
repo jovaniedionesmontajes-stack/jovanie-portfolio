@@ -260,7 +260,7 @@
   var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
   function draw(cx, cy) {
     var px = stage.clientWidth / 2;
-    var T = -300, my = (T + cy) / 2 + 10; // straps run up under the header
+    var T = innerWidth <= 980 ? 0 : -300, my = (T + cy) / 2 + 10; // straps run up under the header
     s1.setAttribute('d', 'M' + (px - 52) + ',' + T + ' Q' + ((px - 52 + cx - 6) / 2 - 4) + ',' + my + ' ' + (cx - 6) + ',' + cy);
     s2.setAttribute('d', 'M' + (px + 52) + ',' + T + ' Q' + ((px + 52 + cx + 6) / 2 + 4) + ',' + my + ' ' + (cx + 6) + ',' + cy);
     s1.setAttribute('stroke', '#f0a31b'); s2.setAttribute('stroke', '#f0a31b');
