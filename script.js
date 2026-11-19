@@ -237,3 +237,58 @@
 
   var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Hanging ID badge: calm pendulum, hover nudge + drag */
+(function () {
+  var stage = document.getElementById('idStage'), card = document.getElementById('idCard');
+  if (!stage || !card) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CW = 240, L0 = 150, MAXA = 0.45, MAXW = 1.2;
+  var th = reduce ? 0 : 0.12, w = 0, ph = 0, pw = 0, L = L0, Lv = 0, drag = false, last = null, run = false;
+  var s1 = document.getElementById('idS1'), s2 = document.getElementById('idS2');
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+  function draw(cx, cy) {
+    var px = stage.clientWidth / 2;
+    s1.setAttribute('d', 'M' + (px - 52) + ',0 Q' + ((px - 52 + cx - 6) / 2 - 4) + ',' + (cy / 2 + 10) + ' ' + (cx - 6) + ',' + cy);
+    s2.setAttribute('d', 'M' + (px + 52) + ',0 Q' + ((px + 52 + cx + 6) / 2 + 4) + ',' + (cy / 2 + 10) + ' ' + (cx + 6) + ',' + cy);
+    s1.setAttribute('stroke', '#f0a31b'); s2.setAttribute('stroke', '#f0a31b');
+  }
+  function render() {
+    var px = stage.clientWidth / 2, cx = px + L * Math.sin(th), cy = -6 + L * Math.cos(th);
+    card.style.transform = 'translate(' + (cx - CW / 2) + 'px,' + cy + 'px) rotate(' + ph + 'rad)';
+    card.style.setProperty('--sx', (50 + clamp(ph * 80, -60, 60)) + '%');
+    card.style.setProperty('--sy', (30 + Math.abs(ph) * 30) + '%');
+    draw(cx, cy + 14);
+  }
+  function step() {
+    var dt = 1 / 60;
+    if (!drag) {
+      w += (-14 * Math.sin(th) - 2.2 * w) * dt; w = clamp(w, -MAXW, MAXW); th = clamp(th + w * dt, -MAXA, MAXA);
+      Lv += ((L0 - L) * 120 - 10 * Lv) * dt; L += Lv * dt;
+    }
+    pw += (-40 * (ph - th) - 6 * pw) * dt; ph += pw * dt;
+    render();
+    if (!drag && Math.abs(w) < 0.004 && Math.abs(th) < 0.002 && Math.abs(pw) < 0.004 && Math.abs(ph) < 0.002 && Math.abs(L - L0) < 0.05) { th = ph = w = pw = 0; L = L0; render(); run = false; return; }
+    requestAnimationFrame(step);
+  }
+  function kick() { if (!run && !reduce) { run = true; requestAnimationFrame(step); } }
+  function pos(e) { var r = stage.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+  stage.addEventListener('pointermove', function (e) {
+    if (drag) {
+      var m = pos(e), dx = m.x - stage.clientWidth / 2, dy = Math.max(40, m.y + 6);
+      var nt = clamp(Math.atan2(dx, dy), -0.6, 0.6); w = clamp((nt - th) * 60, -MAXW * 2, MAXW * 2); th = nt;
+      L = clamp(Math.hypot(dx, dy), L0 * 0.9, L0 * 1.25); Lv = 0; kick();
+    } else if (last && e.pointerType === 'mouse' && !reduce) {
+      var r = card.getBoundingClientRect();
+      if (e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom) {
+        w = clamp(w + clamp(e.clientX - last.x, -25, 25) * 0.012, -MAXW, MAXW); kick();
+      }
+    }
+    last = { x: e.clientX, y: e.clientY };
+  });
+  card.addEventListener('pointerdown', function (e) { if (reduce) return; drag = true; card.classList.add('drag'); stage.setPointerCapture(e.pointerId); last = { x: e.clientX, y: e.clientY }; kick(); });
+  var up = function () { drag = false; card.classList.remove('drag'); kick(); };
+  stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+  addEventListener('resize', render);
+  render(); kick();
+})();
