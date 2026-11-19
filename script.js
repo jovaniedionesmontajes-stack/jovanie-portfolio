@@ -125,10 +125,21 @@
     idx = (i + tabs.length) % tabs.length;
     var t = tabs[idx];
     tabs.forEach(function (x) { x.classList.toggle('on', x === t); });
-    shotImg.src = t.dataset.src; shotImg.width = t.dataset.w; shotImg.height = t.dataset.h; shotImg.alt = t.dataset.alt;
     if (shotCap) shotCap.textContent = t.dataset.cap;
-    if (main) { main.classList.remove('swap'); void main.offsetWidth; main.classList.add('swap'); }
+    var mine = ++shotToken, src = t.dataset.src;
+    function apply() {
+      if (mine !== shotToken) return; /* a newer click won */
+      shotImg.src = src; shotImg.width = t.dataset.w; shotImg.height = t.dataset.h; shotImg.alt = t.dataset.alt;
+      if (main) { main.classList.remove('swap'); void main.offsetWidth; main.classList.add('swap'); }
+    }
+    /* only swap once the new picture is fully loaded, so the old one never lingers under the wrong tab */
+    var pre = new Image(); pre.onload = apply; pre.onerror = apply; pre.src = src;
+    if (pre.complete) apply();
   }
+  var shotToken = 0;
+  /* warm the cache so tab clicks feel instant */
+  function preloadShots() { tabs.forEach(function (t) { var im = new Image(); im.src = t.dataset.src; }); }
+  if ('requestIdleCallback' in window) requestIdleCallback(preloadShots); else setTimeout(preloadShots, 1500);
   tabs.forEach(function (t, i) { t.addEventListener('click', function () { showShot(i); }); });
 
   var lb = $('#lightbox'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'), lastFocus = null;
