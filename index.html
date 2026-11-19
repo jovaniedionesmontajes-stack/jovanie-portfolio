@@ -9,6 +9,9 @@
   <meta property="og:title" content="Jovanie Montajes — Web Developer in Davao, PH">
   <meta property="og:description" content="Simple websites and web apps for businesses. Send me a message about your project.">
   <meta property="og:type" content="website">
+  <!-- After you publish, change this to your full URL, e.g. https://yoursite.com/assets/og-image.png -->
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +36,7 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero section-wrap">
+    <section class="hero section-wrap" id="home">
       <div class="hero-copy">
         <p class="status"><span class="status-dot" aria-hidden="true"></span> Open for projects · Davao, Philippines</p>
         <h1>I build websites and web apps <em>that are easy to use.</em></h1>
@@ -42,16 +45,17 @@
           <a class="button button-primary" href="#contact">Start a project</a>
           <a class="button button-ghost" href="#work">See my work</a>
           <a class="hero-mail" href="mailto:jovaniedionesmontajes@gmail.com?subject=Project%20inquiry">or email me directly</a>
+          <span class="chat-links" data-chat hidden></span>
         </div>
         <ul class="hero-points" aria-label="Quick facts">
           <li>Simple words, no tech talk</li>
           <li>Works on phones</li>
-          <li>I reply by email</li>
+          <li>Bisaya, Tagalog, or English</li>
         </ul>
       </div>
       <figure class="hero-photo">
         <div class="photo-frame"><img src="assets/profile.jpg" width="702" height="602" alt="Portrait of Jovanie Montajes in a black suit" fetchpriority="high"></div>
-        <figcaption><strong>Jovanie Montajes</strong><span>Web developer · Davao, PH</span></figcaption>
+        <figcaption><strong>Jovanie Montajes</strong><span>AI-Assisted Digital Solutions Developer · Davao, PH</span></figcaption>
       </figure>
     </section>
 
@@ -85,35 +89,50 @@
         <p class="kicker">My work</p>
         <h2>A real tool <em>for a real job.</em></h2>
         <article class="project">
-          <a class="project-visual" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the EOD Monitoring Matrix live project (opens in a new tab)">
-            <div class="mock" aria-hidden="true">
-              <div class="mock-bar"><i></i><i></i><i></i><small>OPERATIONS / OVERVIEW</small></div>
-              <div class="mock-body">
-                <div class="mock-side"><b>EM</b><i></i><i></i><i></i></div>
-                <div class="mock-main">
-                  <div class="mock-title">Executive Overview</div>
-                  <div class="mock-stats"><div><small>REPORTING</small><b>Daily EOD</b></div><div><small>MONITORING</small><b>Variances</b></div><div><small>FOLLOW-UP</small><b>Action log</b></div></div>
-                  <div class="mock-rows"><i></i><i></i><i></i><i></i></div>
-                </div>
-              </div>
+          <div class="gallery">
+            <button class="shot-main" type="button" id="shot-open" aria-label="Enlarge screenshot">
+              <img id="shot-img" src="assets/eod-1.jpg" width="1600" height="611" alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" fetchpriority="high">
+              <span class="shot-zoom">Enlarge</span>
+            </button>
+            <div class="shot-tabs" role="group" aria-label="Choose a screenshot">
+              <button type="button" class="on" data-src="assets/eod-1.jpg" data-w="1600" data-h="611" data-alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" data-cap="Overview: total variance, number of issues, the top branch, and a short list of what to check first.">Overview</button>
+              <button type="button" data-src="assets/eod-2.jpg" data-w="1600" data-h="756" data-alt="Branch ranking showing the most and least affected branches" data-cap="Branch ranking: see which branches have the biggest and smallest variances, side by side.">Branch ranking</button>
+              <button type="button" data-src="assets/eod-3.jpg" data-w="1600" data-h="753" data-alt="Chart of issue types and a ranked list of problem product categories" data-cap="Problem items: which types of mistakes and which product groups cost the most.">Problem items</button>
+              <button type="button" data-src="assets/eod-4.jpg" data-w="1600" data-h="761" data-alt="Monthly variance breakdown with a day-by-day chart" data-cap="Monthly trend: day-by-day amounts, compared with last month.">Monthly trend</button>
+              <button type="button" data-src="assets/eod-5.jpg" data-w="1600" data-h="750" data-alt="Void transactions page with totals and top branches" data-cap="Void transactions: totals by month, branch, and staff, with a comparison to last month.">Voids</button>
             </div>
-            <span class="visual-hint">Click to open live project ↗</span>
-          </a>
+            <p class="shot-caption" id="shot-cap">Overview: total variance, number of issues, the top branch, and a short list of what to check first.</p>
+            <p class="shot-note">Real screenshots from the live app. Staff names are hidden.</p>
+          </div>
           <div class="project-info">
-            <p class="project-tag">Daily reports tool · Live project</p>
-            <h3>EOD Monitoring Matrix</h3>
-            <p class="project-problem"><strong>The problem:</strong> teams need one place to send end-of-day reports, see differences between branches, and track what to do next.</p>
-            <p class="project-solution"><strong>What I made:</strong> one web app for branches and managers.</p>
-            <ul class="checks">
-              <li>Daily End-of-Day reports</li>
-              <li>Checking differences between branches</li>
-              <li>Follow-up task tracking</li>
-              <li>Login with different access levels</li>
-            </ul>
-            <p class="chips"><span>Supabase</span><span>Vercel</span><span>Web app</span></p>
-            <a class="button button-dark" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            <div class="info-main">
+              <p class="project-tag">Daily reports tool · Live project</p>
+              <h3>EOD Monitoring Matrix</h3>
+              <p class="project-problem"><strong>The problem:</strong> teams need one place to send end-of-day reports, see differences between branches, and track what to do next.</p>
+              <p class="project-solution"><strong>What I made:</strong> one web app for branches and managers.</p>
+              <p class="login-note"><strong>Note:</strong> the live app needs a login. <a href="#contact">Message me</a> and I can show you how it works.</p>
+            </div>
+            <div class="info-side">
+              <ul class="checks">
+                <li>Daily End-of-Day reports</li>
+                <li>Checking differences between branches</li>
+                <li>Follow-up task tracking</li>
+                <li>Login with different access levels</li>
+              </ul>
+              <p class="chips"><span>Supabase</span><span>Vercel</span><span>Web app</span></p>
+              <a class="button button-dark" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </div>
             <p class="note">I planned, designed, and built this myself, with help from AI coding tools. It is a personal project. I do not claim any client results or numbers.</p>
           </div>
+        </article>
+        <dialog id="lightbox" aria-label="Screenshot"><button type="button" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></dialog>
+        <article class="sample">
+          <div>
+            <p class="project-tag">Sample website · Not a real client</p>
+            <h3>Dental clinic website</h3>
+            <p>A sample I made to show what a small clinic website can look like: services, clinic hours, and a simple appointment request. Try it on your phone.</p>
+          </div>
+          <a class="button button-dark" href="samples/dental-clinic.html">View sample site <span aria-hidden="true">→</span></a>
         </article>
       </div>
     </section>
@@ -145,7 +164,7 @@
         <div class="card slim"><h3>Web basics</h3><p>HTML, CSS, JavaScript, pages that fit any screen</p></div>
         <div class="card slim"><h3>Data &amp; login</h3><p>Supabase, Firebase, user login, APIs, webhooks</p></div>
         <div class="card slim"><h3>Publish &amp; fix</h3><p>Git, GitHub, Vercel, testing, fixing bugs</p></div>
-        <div class="card slim"><h3>AI tools</h3><p>ChatGPT, Claude, Gemini, VS Code, Cursor, Replit, Lovable, Bolt</p></div>
+        <div class="card slim"><h3>AI tools</h3><p>ChatGPT, Claude, Gemini, VS Code, Cursor</p></div>
       </div>
       <p class="fine">These are tools I have used. I know some better than others.</p>
     </section>
@@ -171,6 +190,9 @@
       <div class="faq-list">
         <details><summary>I don't know much about tech. Is that okay?</summary><p>Yes. I use simple words and explain each step, so you always know what is happening.</p></details>
         <details><summary>What should I write in my first message?</summary><p>Tell me about your business, what you want to make or fix, and your deadline if you have one. Links to sites you like help too, but you don't need them.</p></details>
+        <details><summary>How much does it cost?</summary><p>It depends on the pages and features you need. After you message me, I will send you a clear price before we start. Your first message is free and has no obligation.</p></details>
+        <details><summary>Who owns the website after it is done?</summary><p>You do. The website, your content, and your logo are yours. I can explain how hosting works in simple words so you stay in control.</p></details>
+        <details><summary>What if I need changes after it goes live?</summary><p>Just message me. Small changes like text or photos are easy. For bigger changes, I will tell you what is needed first.</p></details>
         <details><summary>How can I contact you?</summary><p>Email is best: <a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>. Or use the form below.</p></details>
         <details><summary>Can I see an example?</summary><p>Yes. The <a href="#work">EOD Monitoring Matrix</a> is live. You can open it anytime.</p></details>
       </div>
@@ -187,6 +209,7 @@
             <span class="email-label">My email</span>
             <a class="email-link" href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
             <div class="email-actions">
+              <span class="chat-links" data-chat hidden></span>
               <button type="button" class="button button-dark small" id="copy-email" data-email="jovaniedionesmontajes@gmail.com">Copy email</button>
               <a class="button button-outline-dark small" id="gmail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=jovaniedionesmontajes@gmail.com&su=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
             </div>

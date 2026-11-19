@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Dental Clinic — Sample website by Jovanie Montajes</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root{--teal:#0f766e;--teal-d:#0b5a54;--soft:#e8f5f3;--ink:#16302d;--muted:#4b6663;--line:#d3e5e2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.65}
+    a{color:inherit}
+    .sample-bar{background:#111214;color:#f4f2ea;font-size:14px;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;align-items:center}
+    .sample-bar strong{color:#d7fa55}
+    .sample-bar a{color:#d7fa55;font-weight:700}
+    .wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+    header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px;flex-wrap:wrap}
+    .logo{font-weight:800;font-size:20px;color:var(--teal);text-decoration:none}
+    .top nav{display:flex;gap:18px;flex-wrap:wrap}
+    .top nav a{text-decoration:none;font-weight:600;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 26px;border-radius:12px;background:var(--teal);color:#fff;font-weight:700;font-size:17px;font-family:inherit;border:0;cursor:pointer;text-decoration:none}
+    .btn:hover{background:var(--teal-d)}
+    .btn.alt{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:36px 0 64px}
+    .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.1;margin:0 0 16px;letter-spacing:-.03em}
+    .hero p{color:var(--muted);font-size:19px;max-width:520px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .hero-card{background:var(--soft);border-radius:24px;padding:30px;border:1px solid var(--line)}
+    .hero-card h2{margin:0 0 14px;font-size:20px}
+    .hero-card li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .hero-card li:last-child{border:0}
+    ul{list-style:none;margin:0;padding:0}
+    section{padding:56px 0}
+    h2.title{font-size:clamp(28px,3.6vw,40px);margin:0 0 28px;letter-spacing:-.02em}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{border:1px solid var(--line);border-radius:16px;padding:24px}
+    .card b{display:block;font-size:19px;margin-bottom:6px}
+    .card span{color:var(--muted);font-size:16px}
+    .soft{background:var(--soft)}
+    .book{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;gap:10px}
+    label{font-weight:700;font-size:15px}
+    input,select{font:inherit;padding:13px;border:1.5px solid #aac6c1;border-radius:10px;min-height:50px;width:100%}
+    .done{margin-top:6px;color:var(--teal-d);font-weight:700}
+    footer{padding:28px 0;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+    .steps{counter-reset:s;display:grid;gap:14px}
+    .steps li{display:flex;gap:14px;align-items:flex-start}
+    .steps li:before{counter-increment:s;content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}
+    @media(max-width:860px){.hero,.book{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.cards{grid-template-columns:1fr}body{font-size:16.5px}}
+  </style>
+</head>
+<body>
+  <div class="sample-bar">
+    <span><strong>SAMPLE DESIGN</strong> — not a real clinic. Made by Jovanie Montajes to show what a clinic website can look like.</span>
+    <a href="../index.html#work">← Back to portfolio</a>
+  </div>
+
+  <div class="wrap">
+    <header class="top">
+      <a class="logo" href="#">Sample Dental Clinic</a>
+      <nav aria-label="Sample navigation"><a href="#services">Services</a><a href="#hours">Hours</a><a href="#book">Book</a></nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>Gentle dental care for the whole family.</h1>
+        <p>Clean check-ups, simple prices, and a team that explains everything before we start.</p>
+        <div class="actions">
+          <a class="btn" href="#book">Request an appointment</a>
+          <a class="btn alt" href="#services">See services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Visit us</h2>
+        <ul>
+          <li><span>Open</span><strong>Mon–Sat, 9am–5pm</strong></li>
+          <li><span>Where</span><strong>Davao City (sample)</strong></li>
+          <li><span>Walk-ins</span><strong>Welcome</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="title">What we do</h2>
+      <div class="cards">
+        <div class="card"><b>Check-up &amp; cleaning</b><span>A regular visit to keep teeth healthy.</span></div>
+        <div class="card"><b>Fillings</b><span>Fix cavities so eating is comfortable again.</span></div>
+        <div class="card"><b>Braces consult</b><span>Talk to the dentist about straightening options.</span></div>
+        <div class="card"><b>Kids' dental</b><span>A calm, friendly visit for children.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="hours">
+    <div class="wrap">
+      <h2 class="title">How it works</h2>
+      <ol class="steps">
+        <li><div><strong>Send a request</strong><br>Pick a service and a day below. It takes less than a minute.</div></li>
+        <li><div><strong>We reply to confirm</strong><br>We message you the exact time.</div></li>
+        <li><div><strong>Come in</strong><br>Bring any old dental records if you have them.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div>
+        <h2 class="title">Request an appointment</h2>
+        <p style="color:var(--muted)">Only three questions. No account or sign-up needed.</p>
+      </div>
+      <form id="f" novalidate>
+        <label for="s">Service</label>
+        <select id="s"><option>Check-up &amp; cleaning</option><option>Fillings</option><option>Braces consult</option><option>Kids' dental</option></select>
+        <label for="d">Preferred day</label>
+        <select id="d"><option>Any day this week</option><option>Weekday</option><option>Saturday</option></select>
+        <label for="p">Your mobile number</label>
+        <input id="p" inputmode="tel" placeholder="09XX XXX XXXX">
+        <button class="btn" type="submit">Send request</button>
+        <p class="done" id="done" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap"><footer>This is a sample page. No real clinic, and no message is sent from this form.</footer></div>
+
+  <script>
+    document.getElementById('f').addEventListener('submit',function(e){
+      e.preventDefault();
+      document.getElementById('done').textContent='This is a sample, so nothing was sent. On a real site, the clinic would receive this request.';
+    });
+  </script>
+</body>
+</html>
