@@ -1,246 +1,271 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jovanie Montajes — Websites &amp; Business Tools in Davao</title>
-  <meta name="description" content="Websites that bring customers to your door, and simple tools that replace Excel and Messenger reports. Jovanie Montajes, Davao City. Bisaya, Tagalog or English.">
-  <meta name="theme-color" content="#f6f1e7">
-  <meta property="og:title" content="Jovanie Montajes — Websites &amp; Business Tools in Davao">
-  <meta property="og:description" content="Websites that get customers to message you. Tools that end the Excel mess. Message me about your project.">
-  <meta property="og:type" content="website">
-  <!-- After publishing, change to your full URL, e.g. https://yoursite.com/assets/og-image.png -->
-  <meta property="og:image" content="assets/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jovanie Montajes — Websites, Dashboards &amp; Business Tools in Davao</title>
+<meta name="description" content="Jovanie Montajes builds business websites, dashboards and custom web apps that simplify operations. Based in Davao City. Bisaya, Tagalog or English.">
+<meta name="theme-color" content="#f6f1e7">
+<meta property="og:title" content="Jovanie Montajes — Websites, Dashboards &amp; Business Tools">
+<meta property="og:description" content="Business websites, dashboards and custom web apps designed to simplify operations.">
+<meta property="og:type" content="website">
+<!-- After publishing, change to your full URL, e.g. https://yoursite.com/assets/og-image.png, and add <link rel="canonical"> -->
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark'}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jovanie Montajes","jobTitle":"Web Developer","email":"jovaniedionesmontajes@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Davao City","addressCountry":"PH"},"knowsLanguage":["Bisaya","Tagalog","English"]}</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Jovanie Montajes, back to top"><span class="brand-mark">JM</span><span class="brand-name">Jovanie Montajes</span></a>
-    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
-    <nav class="nav" id="nav" aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#pricing">Price &amp; terms</a>
-      <a href="#about">About</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="bg-fx" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="grid-pattern"></i></div>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#home" aria-label="Jovanie Montajes, home"><span class="brand-mark">JM</span><span class="brand-name">Jovanie Montajes</span></a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#process">Process</a><a href="#about">About</a><a href="resume.html">Resume</a>
+    <a class="nav-cta" href="#contact">Message me</a>
+  </nav>
+  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false"><span class="tt-icon" aria-hidden="true"></span></button>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+</header>
+
+<main id="main">
+  <section class="hero section-wrap" id="home">
+    <div class="hero-copy">
+      <p class="status rise" style="--d:0"><span class="status-dot" aria-hidden="true"></span> Taking new projects · Davao City</p>
+      <h1 class="rise" style="--d:1">I build digital experiences that help businesses <em class="shine">work smarter.</em></h1>
+      <p class="hero-sub rise" style="--d:2">Business websites, dashboards, and custom web applications designed to simplify operations. I explain everything in plain words, in Bisaya, Tagalog or English.</p>
+      <div class="hero-actions rise" style="--d:3">
+        <a class="button button-primary" href="#work">View projects</a>
+        <a class="button button-ghost" href="#contact">Contact me</a>
+      </div>
+      <div class="chat-row rise" style="--d:3"><span class="chat-links" data-chat hidden></span></div>
+      <ul class="stack rise" style="--d:4" aria-label="Technology stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li><li>Firebase</li><li>Vercel</li></ul>
+    </div>
+    <figure class="hero-photo rise" style="--d:2">
+      <div class="photo-frame"><img src="assets/profile.jpg" width="702" height="602" alt="Portrait of Jovanie Montajes in a black suit" fetchpriority="high"></div>
+      <figcaption><strong>Jovanie Montajes</strong><span>Web developer · I use AI tools, and I check every line myself</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="facts-strip section-wrap" aria-label="At a glance">
+    <div><b data-count="2">2</b><span>featured projects</span></div>
+    <div><b data-count="3">3</b><span>languages: Bisaya, Tagalog, English</span></div>
+    <div><b data-count="2">2</b><span>rounds of changes included</span></div>
+    <div><b data-count="14">14</b><span>days of free bug fixes after launch</span></div>
+  </section>
+
+  <section id="services" class="section section-wrap">
+    <p class="kicker">Services</p>
+    <h2>Pick the one that sounds like <em>your problem.</em></h2>
+    <div class="cards services">
+      <article class="card tilt reveal"><span class="ico" aria-hidden="true">▤</span><p class="card-for">"Customers can't find us online."</p><h3>Business website</h3><p>Services, prices, hours, map, and a button to message or call. Good for clinics, shops, restaurants and salons.</p><p class="card-price"><span>Starts at</span> ₱8,000</p><a class="card-link" href="#contact" data-pick="A business website">Ask about this →</a></article>
+      <article class="card tilt reveal"><span class="ico" aria-hidden="true">⌘</span><p class="card-for">"We need something that fits how we work."</p><h3>Custom web application</h3><p>Staff log in, send daily reports and manage records, in a tool built around your process.</p><p class="card-price"><span>Starts at</span> ₱20,000</p><a class="card-link" href="#contact" data-pick="A web app or dashboard">Ask about this →</a></article>
+      <article class="card tilt reveal"><span class="ico" aria-hidden="true">◧</span><p class="card-for">"I want totals per branch on one screen."</p><h3>Admin dashboard</h3><p>Rankings, filters and charts so managers see what needs attention first. Priced as a web app.</p><p class="card-price"><span>From</span> ₱20,000</p><a class="card-link" href="#contact" data-pick="A web app or dashboard">Ask about this →</a></article>
+      <article class="card tilt reveal"><span class="ico" aria-hidden="true">◉</span><p class="card-for">"Our reports are in Excel and chat."</p><h3>Business monitoring system</h3><p>Daily reports, variance tracking and follow-up tasks in one place. This is what the EOD project below does. Priced as a web app.</p><p class="card-price"><span>From</span> ₱20,000</p><a class="card-link" href="#contact" data-pick="A web app or dashboard">Ask about this →</a></article>
+      <article class="card tilt reveal"><span class="ico" aria-hidden="true">⚡</span><p class="card-for">"We have a site, but it's a mess."</p><h3>Website improvement</h3><p>I review your site or tool, tell you what's wrong, and make it faster, clearer and easier on phones.</p><p class="card-price"><span>Starts at</span> ₱3,000</p><a class="card-link" href="#contact" data-pick="Improve an existing site or tool">Ask about this →</a></article>
+    </div>
+  </section>
+
+  <section id="work" class="section work-section">
+    <div class="section-wrap">
+      <p class="kicker">Featured projects</p>
+      <h2>Real work, <em>explained honestly.</em></h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="on" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="app" aria-pressed="false">Web apps</button>
+        <button type="button" data-filter="site" aria-pressed="false">Websites</button>
+      </div>
+
+      <article class="project reveal" data-cat="app">
+        <div class="gallery">
+          <button class="shot-main" type="button" id="shot-open" aria-label="Enlarge screenshot" aria-haspopup="dialog">
+            <img id="shot-img" src="assets/eod-1.jpg" width="1600" height="611" alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" fetchpriority="high">
+            <span class="shot-zoom">Enlarge</span>
+          </button>
+          <div class="shot-tabs" role="group" aria-label="Choose a screenshot">
+            <button type="button" class="on" data-src="assets/eod-1.jpg" data-w="1600" data-h="611" data-alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" data-cap="Overview: total variance, number of issues, the top branch, and a short list of what to check first.">Overview</button>
+            <button type="button" data-src="assets/eod-2.jpg" data-w="1600" data-h="756" data-alt="Branch ranking showing the most and least affected branches" data-cap="Branch ranking: see which branches have the biggest and smallest variances, side by side.">Branch ranking</button>
+            <button type="button" data-src="assets/eod-3.jpg" data-w="1600" data-h="753" data-alt="Chart of issue types and a ranked list of problem product categories" data-cap="Problem items: which types of mistakes and which product groups cost the most.">Problem items</button>
+            <button type="button" data-src="assets/eod-4.jpg" data-w="1600" data-h="761" data-alt="Monthly variance breakdown with a day-by-day chart" data-cap="Monthly trend: day-by-day amounts, compared with last month.">Monthly trend</button>
+            <button type="button" data-src="assets/eod-5.jpg" data-w="1600" data-h="750" data-alt="Void transactions page with totals and top branches" data-cap="Void transactions: totals by month, branch, and staff, with a comparison to last month.">Voids</button>
+          </div>
+          <p class="shot-caption" id="shot-cap" aria-live="polite">Overview: total variance, number of issues, the top branch, and a short list of what to check first.</p>
+          <p class="shot-note">Real screenshots from the live app. Staff names are hidden.</p>
+        </div>
+        <div class="project-info">
+          <div class="info-main">
+            <p class="project-tag">Business monitoring web app · Live project</p>
+            <h3>EOD Monitoring Matrix</h3>
+            <dl class="case">
+              <div><dt>Problem</dt><dd>End-of-day reports from many branches pile up, and nobody can quickly see which branch has issues.</dd></div>
+              <div><dt>Solution</dt><dd>One web app where branches send reports and managers see differences, rankings and what to follow up first.</dd></div>
+              <div><dt>My role</dt><dd>I planned, designed and built it myself: interface, database setup, login and access levels, and deployment, with help from AI coding tools.</dd></div>
+            </dl>
+            <p class="login-note"><strong>Note:</strong> the live app needs a login. <a href="#contact">Message me</a> and I'll show you around.</p>
+          </div>
+          <div class="info-side">
+            <ul class="checks">
+              <li>Daily End-of-Day reporting</li><li>Branch monitoring and comparison</li><li>Staff monitoring</li><li>Variance tracking</li><li>Monthly breakdown</li><li>Follow-up action tracking</li><li>Role-based access</li>
+            </ul>
+            <p class="chips"><span>Supabase</span><span>Vercel</span><span>JavaScript</span><span>Web app</span></p>
+            <a class="button button-dark" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span><span class="sr">(opens in a new tab)</span></a>
+          </div>
+          <p class="note">It's a personal project, so I don't claim any client results or numbers.</p>
+        </div>
+      </article>
+      <dialog id="lightbox" aria-label="Screenshot viewer">
+        <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Close">×</button>
+        <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Previous screenshot">‹</button>
+        <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+        <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Next screenshot">›</button>
+      </dialog>
+
+      <article class="sample reveal" data-cat="site">
+        <a class="sample-thumb" href="samples/dental-clinic.html" aria-label="Open the dental clinic sample site"><img src="assets/sample-dental.jpg" width="1100" height="690" alt="Preview of the sample dental clinic website" loading="lazy" decoding="async"></a>
+        <div class="sample-text">
+          <p class="project-tag">Sample website · Not a real client</p>
+          <h3>Dental clinic website</h3>
+          <dl class="case">
+            <div><dt>Problem</dt><dd>Small clinics need patients to find services and hours fast, on a phone.</dd></div>
+            <div><dt>Solution</dt><dd>Services, hours and an appointment request that takes under a minute.</dd></div>
+            <div><dt>My role</dt><dd>Design and front-end build.</dd></div>
+          </dl>
+          <p class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Mobile-first</span></p>
+          <a class="button button-dark" href="samples/dental-clinic.html">View sample site <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section section-wrap">
+    <p class="kicker">Skills &amp; technologies</p>
+    <h2>What I work with. <em>No inflated claims.</em></h2>
+    <div class="skill-grid">
+      <div class="skill reveal"><h3>Frontend</h3><p class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive design</span></p></div>
+      <div class="skill reveal"><h3>Backend &amp; database</h3><p class="chips"><span>Supabase</span><span>Firebase</span><span>APIs</span><span>Webhooks</span></p></div>
+      <div class="skill reveal"><h3>UI/UX &amp; design</h3><p class="chips"><span>Mobile-first layouts</span><span>Plain-language interfaces</span></p></div>
+      <div class="skill reveal"><h3>Deployment &amp; version control</h3><p class="chips"><span>Git</span><span>GitHub</span><span>Vercel</span><span>Testing &amp; bug fixing</span></p></div>
+      <div class="skill reveal"><h3>AI-assisted development</h3><p class="chips"><span>Claude</span><span>ChatGPT</span><span>Gemini</span><span>Cursor</span><span>VS Code</span></p></div>
+      <div class="skill reveal"><h3>Reporting &amp; automation</h3><p class="chips"><span>Excel</span><span>Google Sheets</span><span>Asana</span></p></div>
+    </div>
+    <p class="section-cta">I know some tools better than others, and I'll tell you if something is outside what I can do well.</p>
+  </section>
+
+  <section id="process" class="section process">
+    <div class="section-wrap">
+      <p class="kicker">Development process</p>
+      <h2>Five steps. <em>You always know what's next.</em></h2>
+      <ol class="steps" id="steps">
+        <li class="reveal"><span class="step-num">1</span><div><h3>Discovery &amp; requirements</h3><p>You message me about your business and what you need. I ask a few questions.</p></div></li>
+        <li class="reveal"><span class="step-num">2</span><div><h3>Planning &amp; design</h3><p>I send the pages, features and a clear price in writing.</p></div></li>
+        <li class="reveal"><span class="step-num">3</span><div><h3>Development</h3><p>I build, you see progress along the way and tell me what to change.</p></div></li>
+        <li class="reveal"><span class="step-num">4</span><div><h3>Testing &amp; optimization</h3><p>I test on phone and computer and fix problems before you see the final.</p></div></li>
+        <li class="reveal"><span class="step-num">5</span><div><h3>Deployment &amp; handover</h3><p>We go live and I hand everything to you.</p></div></li>
+      </ol>
+      <div class="bring"><h3>What I need from you</h3><p>Your business name, what you sell or do, your contact details, and any photos or logo you have. No logo or photos yet? Tell me, we'll work around it.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section section-wrap">
+    <p class="kicker">Price &amp; terms</p>
+    <h2>The answers <em>before you ask.</em></h2>
+    <dl class="facts">
+      <div class="reveal"><dt>Price</dt><dd>Website from ₱8,000. Web app from ₱20,000. Fixes from ₱3,000. You get the exact price in writing before I start.</dd></div>
+      <div class="reveal"><dt>How long</dt><dd>Website: about 1–2 weeks. Web app: about 3–6 weeks. Depends on how fast you send your content.</dd></div>
+      <div class="reveal"><dt>Payment</dt><dd>Half to start, half before going live.</dd></div>
+      <div class="reveal"><dt>Changes</dt><dd>2 rounds of changes are included while building.</dd></div>
+      <div class="reveal"><dt>Ownership</dt><dd>The site, your content and your logo are yours. I explain hosting so you stay in control.</dd></div>
+      <div class="reveal"><dt>After launch</dt><dd>14 days of free bug fixes. After that, just message me for updates.</dd></div>
+    </dl>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="section-wrap about-grid">
+      <div><p class="kicker">About me</p><h2>I understand business problems, <em>not just code.</em></h2></div>
+      <div class="about-copy reveal">
+        <p class="lead">I'm Jovanie, a web developer in Davao. I build for small businesses that want something simple that works.</p>
+        <p>By day I work in internal audit, tracing why numbers and reports don't match. That is why my tools are accurate and easy for staff to use. As a licensed teacher, I explain each step in plain words, in Bisaya, Tagalog or English.</p>
+        <p>I use AI tools like Claude, ChatGPT and Cursor to build faster. But I make the decisions, test everything, and fix what's wrong.</p>
+        <ul class="chips" aria-label="Strengths"><li>Web development</li><li>Business process understanding</li><li>Internal audit</li><li>Problem-solving</li><li>Teaching &amp; communication</li></ul>
+        <p><a class="resume-link" href="resume.html">View my resume →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="credibility" class="section section-wrap">
+    <p class="kicker">Why trust me</p>
+    <h2>No fake reviews. <em>Just real work.</em></h2>
+    <p class="section-cta">I don't have client testimonials yet, so I don't show any. Instead, you can open the live EOD app screenshots, try the sample clinic site on your phone, and read exactly how I work above.</p>
+  </section>
+
+  <section id="faq" class="section section-wrap faq">
+    <p class="kicker">FAQ</p>
+    <h2>Still thinking?</h2>
+    <div class="faq-list">
+      <details><summary>I don't know much about tech. Is that okay?</summary><p>Yes. I use simple words and explain each step. You can reply in Bisaya, Tagalog or English.</p></details>
+      <details><summary>What should I write in my first message?</summary><p>Your business, what you want to make or fix, and your deadline if you have one. Links to sites you like help, but you don't need them.</p></details>
+      <details><summary>Do I need to pay for a domain and hosting?</summary><p>A domain (like yourbusiness.com) is usually paid yearly. Hosting for a simple site can be low-cost or free. I'll list every cost before we start, so there are no surprises.</p></details>
+      <details><summary>What if I need changes after it goes live?</summary><p>Message me. Small changes like text or photos are quick. For bigger changes I'll tell you the price first.</p></details>
+      <details><summary>Can I see an example first?</summary><p>Yes. See the <a href="#work">EOD tool and the sample clinic site</a>. I can also show the app's login side on a call.</p></details>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-wrap contact">
+    <div class="contact-panel reveal">
+      <div class="contact-intro">
+        <p class="kicker dark">Contact</p>
+        <h2>Let's talk about your project.</h2>
+        <p>Tell me a little. I'll reply with questions or a price. No obligation.</p>
+        <div class="email-box">
+          <span class="email-label">My email</span>
+          <a class="email-link" href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
+          <div class="email-actions">
+            <span class="chat-links" data-chat hidden></span>
+            <button type="button" class="button button-dark small" id="copy-email" data-email="jovaniedionesmontajes@gmail.com">Copy email</button>
+            <a class="button button-outline-dark small" id="gmail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=jovaniedionesmontajes@gmail.com&su=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+          </div>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <h3>Send a quick message</h3>
+        <label for="f-type">Project type</label>
+        <select id="f-type" name="type">
+          <option>A business website</option><option>A web app or dashboard</option><option>Improve an existing site or tool</option><option>Not sure yet</option>
+        </select>
+        <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+        <span class="err" id="e-name" role="alert"></span>
+        <label for="f-biz">Business name <em>(optional)</em></label>
+        <input id="f-biz" name="biz" autocomplete="organization">
+        <label for="f-email">Your email <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+        <span class="err" id="e-email" role="alert"></span>
+        <label for="f-msg">Project description <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="f-msg" name="message" rows="4" required minlength="10" placeholder="What do you need? Deadline, links you like, or your number" aria-describedby="e-msg"></textarea>
+        <span class="err" id="e-msg" role="alert"></span>
+        <button class="button button-dark" type="submit" id="send-btn">Open my email app <span aria-hidden="true">→</span></button>
+        <p class="form-help" id="form-help">This form has no server. Pressing the button opens your email app with the message ready; you still need to press Send there. No email app? <a id="gmail-fallback" href="#" target="_blank" rel="noopener noreferrer">Open in Gmail</a> or copy my email.</p>
+      </form>
+    </div>
+    <footer>
+      <span>© <span id="year">2026</span> Jovanie Montajes · Davao, PH</span>
       <a href="resume.html">Resume</a>
-      <a class="nav-cta" href="#contact">Message me</a>
-    </nav>
-  </header>
+      <a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </section>
+</main>
 
-  <main id="main">
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span> Taking new projects · Davao City</p>
-        <h1>Websites that get customers to <em>message you.</em></h1>
-        <p class="hero-sub">I also build simple tools that replace Excel sheets and Messenger reports. I'm Jovanie. I explain everything in plain words, in Bisaya, Tagalog or English.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#contact">Tell me your project</a>
-          <a class="button button-ghost" href="#work">See real work</a>
-        </div>
-        <div class="chat-row"><span class="chat-links" data-chat hidden></span><a class="hero-mail" href="mailto:jovaniedionesmontajes@gmail.com?subject=Project%20inquiry">or email me</a></div>
-        <ul class="hero-points" aria-label="Quick facts">
-          <li>First message is free</li>
-          <li>You own everything</li>
-          <li>Made for phones first</li>
-        </ul>
-      </div>
-      <figure class="hero-photo">
-        <div class="photo-frame"><img src="assets/profile.jpg" width="702" height="602" alt="Portrait of Jovanie Montajes in a black suit" fetchpriority="high"></div>
-        <figcaption><strong>Jovanie Montajes</strong><span>Web developer · I use AI tools, and I check every line myself</span></figcaption>
-      </figure>
-    </section>
-
-    <section id="services" class="section section-wrap">
-      <p class="kicker">What I make</p>
-      <h2>Pick the one that sounds like <em>your problem.</em></h2>
-      <div class="cards three">
-        <article class="card">
-          <p class="card-for">"Customers can't find us online."</p>
-          <h3>Business website</h3>
-          <p>Services, prices, hours, map, and a button to message or call. Good for clinics, shops, restaurants and salons.</p>
-          <p class="card-price"><span>Starts at</span> ₱8,000</p><!-- EDIT price -->
-        </article>
-        <article class="card">
-          <p class="card-for">"Our reports are in Excel and chat."</p>
-          <h3>Dashboard / web app</h3>
-          <p>Staff log in, send daily reports, and you see totals per branch on one screen. This is what I built in the EOD project below.</p>
-          <p class="card-price"><span>Starts at</span> ₱20,000</p><!-- EDIT price -->
-        </article>
-        <article class="card">
-          <p class="card-for">"We have a site, but it's a mess."</p>
-          <h3>Fix &amp; improve</h3>
-          <p>I review your site or tool, tell you what's wrong, and make it faster, clearer and easier on phones.</p>
-          <p class="card-price"><span>Starts at</span> ₱3,000</p><!-- EDIT price -->
-        </article>
-      </div>
-      <p class="section-cta">Not sure which one? <a href="#contact">Message me and I'll tell you honestly →</a></p>
-    </section>
-
-    <section id="work" class="section work-section">
-      <div class="section-wrap">
-        <p class="kicker">My work</p>
-        <h2>A real tool, <em>live right now.</em></h2>
-        <article class="project">
-          <div class="gallery">
-            <button class="shot-main" type="button" id="shot-open" aria-label="Enlarge screenshot">
-              <img id="shot-img" src="assets/eod-1.jpg" width="1600" height="611" alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" fetchpriority="high">
-              <span class="shot-zoom">Enlarge</span>
-            </button>
-            <div class="shot-tabs" role="group" aria-label="Choose a screenshot">
-              <button type="button" class="on" data-src="assets/eod-1.jpg" data-w="1600" data-h="611" data-alt="EOD Monitoring Matrix overview: totals, filters, and priority action recommendations" data-cap="Overview: total variance, number of issues, the top branch, and a short list of what to check first.">Overview</button>
-              <button type="button" data-src="assets/eod-2.jpg" data-w="1600" data-h="756" data-alt="Branch ranking showing the most and least affected branches" data-cap="Branch ranking: see which branches have the biggest and smallest variances, side by side.">Branch ranking</button>
-              <button type="button" data-src="assets/eod-3.jpg" data-w="1600" data-h="753" data-alt="Chart of issue types and a ranked list of problem product categories" data-cap="Problem items: which types of mistakes and which product groups cost the most.">Problem items</button>
-              <button type="button" data-src="assets/eod-4.jpg" data-w="1600" data-h="761" data-alt="Monthly variance breakdown with a day-by-day chart" data-cap="Monthly trend: day-by-day amounts, compared with last month.">Monthly trend</button>
-              <button type="button" data-src="assets/eod-5.jpg" data-w="1600" data-h="750" data-alt="Void transactions page with totals and top branches" data-cap="Void transactions: totals by month, branch, and staff, with a comparison to last month.">Voids</button>
-            </div>
-            <p class="shot-caption" id="shot-cap">Overview: total variance, number of issues, the top branch, and a short list of what to check first.</p>
-            <p class="shot-note">Real screenshots from the live app. Staff names are hidden.</p>
-          </div>
-          <div class="project-info">
-            <div class="info-main">
-              <p class="project-tag">Daily reports tool · Live project</p>
-              <h3>EOD Monitoring Matrix</h3>
-              <p class="project-problem"><strong>The problem:</strong> end-of-day reports from many branches pile up, and nobody can see quickly which branch has issues.</p>
-              <p class="project-solution"><strong>What I made:</strong> one web app where branches send reports and managers see differences, rankings and what to follow up first.</p>
-              <p class="login-note"><strong>Note:</strong> the live app needs a login. <a href="#contact">Message me</a> and I'll show you around.</p>
-            </div>
-            <div class="info-side">
-              <ul class="checks">
-                <li>Daily End-of-Day reports</li>
-                <li>Branch-to-branch comparison</li>
-                <li>Follow-up task tracking</li>
-                <li>Login with different access levels</li>
-              </ul>
-              <p class="chips"><span>Supabase</span><span>Vercel</span><span>Web app</span></p>
-              <a class="button button-dark" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="note">I planned, designed and built this myself, with help from AI coding tools. It's a personal project, so I don't claim any client results or numbers.</p>
-          </div>
-        </article>
-        <dialog id="lightbox" aria-label="Screenshot"><button type="button" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></dialog>
-
-        <article class="sample">
-          <a class="sample-thumb" href="samples/dental-clinic.html" aria-label="Open the dental clinic sample site"><img src="assets/sample-dental.jpg" width="640" height="400" alt="Preview of the sample dental clinic website" loading="lazy"></a>
-          <div class="sample-text">
-            <p class="project-tag">Sample website · Not a real client</p>
-            <h3>Dental clinic website</h3>
-            <p>What a small clinic site can look like: services, hours, and an appointment request that takes under a minute. Open it on your phone.</p>
-            <a class="button button-dark" href="samples/dental-clinic.html">View sample site <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="process" class="section process">
-      <div class="section-wrap">
-        <p class="kicker">How we work</p>
-        <h2>Four steps. <em>You always know what's next.</em></h2>
-        <ol class="steps">
-          <li><span class="step-num">1</span><div><h3>You message me</h3><p>Tell me about your business and what you need. A few sentences is enough.</p></div></li>
-          <li><span class="step-num">2</span><div><h3>We plan</h3><p>I ask a few questions, then send you the pages, features and a clear price.</p></div></li>
-          <li><span class="step-num">3</span><div><h3>I build and show you</h3><p>You see progress along the way and tell me what to change.</p></div></li>
-          <li><span class="step-num">4</span><div><h3>Test, launch, hand over</h3><p>I test on phone and computer, fix problems, then go live and hand everything to you.</p></div></li>
-        </ol>
-        <div class="bring">
-          <h3>What I need from you</h3>
-          <p>Your business name, what you sell or do, your contact details, and any photos or logo you have. No logo or photos yet? Tell me, we'll work around it.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section section-wrap">
-      <p class="kicker">Price &amp; terms</p>
-      <h2>The answers <em>before you ask.</em></h2>
-      <dl class="facts"><!-- EDIT: confirm these match how you work -->
-        <div><dt>Price</dt><dd>Website from ₱8,000. Web app from ₱20,000. Fixes from ₱3,000. You get the exact price in writing before I start.</dd></div>
-        <div><dt>How long</dt><dd>Website: about 1–2 weeks. Web app: about 3–6 weeks. Depends on how fast you send your content.</dd></div>
-        <div><dt>Payment</dt><dd>Half to start, half before going live.</dd></div>
-        <div><dt>Changes</dt><dd>2 rounds of changes are included while building.</dd></div>
-        <div><dt>Ownership</dt><dd>The site, your content and your logo are yours. I explain hosting so you stay in control.</dd></div>
-        <div><dt>After launch</dt><dd>14 days of free bug fixes. After that, just message me for updates.</dd></div>
-      </dl>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="section-wrap about-grid">
-        <div>
-          <p class="kicker">About me</p>
-          <h2>I understand the problem <em>before I code.</em></h2>
-        </div>
-        <div class="about-copy">
-          <p class="lead">I'm Jovanie, a web developer in Davao. I build for small businesses that want something simple that works.</p>
-          <p>I use AI tools like Claude, ChatGPT and Cursor to build faster. But I make the decisions, test everything, and fix what's wrong. That means faster delivery without losing quality.</p>
-          <p class="tools"><strong>Tools:</strong> HTML, CSS, JavaScript, Supabase, Firebase, Git, Vercel. I know some better than others, and I'll tell you if something is outside what I can do well.</p>
-          <p><a class="resume-link" href="resume.html">View my resume →</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section section-wrap faq">
-      <p class="kicker">More questions</p>
-      <h2>Still thinking?</h2>
-      <div class="faq-list">
-        <details><summary>I don't know much about tech. Is that okay?</summary><p>Yes. I use simple words and explain each step. You can reply in Bisaya, Tagalog or English.</p></details>
-        <details><summary>What should I write in my first message?</summary><p>Your business, what you want to make or fix, and your deadline if you have one. Links to sites you like help, but you don't need them.</p></details>
-        <details><summary>Do I need to pay for a domain and hosting?</summary><p>A domain (like yourbusiness.com) is usually paid yearly. Hosting for a simple site can be low-cost or free. I'll list every cost before we start, so there are no surprises.</p></details>
-        <details><summary>What if I need changes after it goes live?</summary><p>Message me. Small changes like text or photos are quick. For bigger changes I'll tell you the price first.</p></details>
-        <details><summary>Can I see an example first?</summary><p>Yes. Open the <a href="#work">live EOD tool and the sample clinic site</a>. I can also show the app's login side on a call.</p></details>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-wrap contact">
-      <div class="contact-panel">
-        <div class="contact-intro">
-          <p class="kicker dark">Contact</p>
-          <h2>Let's talk about your project.</h2>
-          <p>Answer two quick things. I'll reply with questions or a price. No obligation.</p>
-          <div class="email-box">
-            <span class="email-label">My email</span>
-            <a class="email-link" href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
-            <div class="email-actions">
-              <span class="chat-links" data-chat hidden></span>
-              <button type="button" class="button button-dark small" id="copy-email" data-email="jovaniedionesmontajes@gmail.com">Copy email</button>
-              <a class="button button-outline-dark small" id="gmail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=jovaniedionesmontajes@gmail.com&su=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
-            </div>
-            <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
-          </div>
-        </div>
-        <form class="contact-form" id="contact-form" novalidate>
-          <h3>Send a quick message</h3>
-          <fieldset>
-            <legend>1. What do you need?</legend>
-            <div class="choices">
-              <label><input type="radio" name="type" value="A business website" checked><span>Business website</span></label>
-              <label><input type="radio" name="type" value="A web app or dashboard"><span>Web app / dashboard</span></label>
-              <label><input type="radio" name="type" value="Improve an existing site or tool"><span>Improve my site</span></label>
-              <label><input type="radio" name="type" value="Not sure yet"><span>Not sure yet</span></label>
-            </div>
-          </fieldset>
-          <label class="opt" for="f-name">2. Your name and business <em>(optional)</em></label>
-          <input id="f-name" name="name" autocomplete="name" placeholder="e.g. Maria, Sunrise Bakery">
-          <label class="opt" for="f-msg">3. Anything to add? <em>(optional)</em></label>
-          <textarea id="f-msg" name="message" rows="3" placeholder="Deadline, links you like, or your number"></textarea>
-          <button class="button button-dark" type="submit">Send message <span aria-hidden="true">→</span></button>
-          <p class="form-help" id="form-help">Your email app opens with the message ready. Just press Send. No email app? <a id="gmail-fallback" href="#" target="_blank" rel="noopener noreferrer">Open in Gmail</a> or tap “Copy email”.</p>
-        </form>
-      </div>
-      <footer>
-        <span>© <span id="year">2026</span> Jovanie Montajes · Davao, PH</span>
-        <a href="resume.html">Resume</a>
-        <a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
-        <a href="#top">Back to top ↑</a>
-      </footer>
-    </section>
-  </main>
-
-  <a class="float-cta" id="float-cta" href="#contact" aria-label="Message Jovanie">Message me</a>
-  <script src="script.js"></script>
+<a class="float-cta" id="float-cta" href="#contact" aria-label="Message Jovanie">Message me</a>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>↑</button>
+<script src="script.js" defer></script>
 </body>
 </html>

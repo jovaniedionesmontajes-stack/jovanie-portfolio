@@ -1,127 +1,203 @@
 (function () {
+  'use strict';
   var EMAIL = 'jovaniedionesmontajes@gmail.com';
+  var doc = document, root = doc.documentElement;
+  var $ = function (s, c) { return (c || doc).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   /* === CHAT LINKS: fill these in and the buttons appear automatically ===
-     messenger: your Facebook username, e.g. 'jovanie.montajes'  (opens m.me/username)
-     whatsapp:  number with country code, no + or spaces, e.g. '639171234567'
-     viber:     number with country code, no + or spaces, e.g. '639171234567'
-     phone:     number with country code; shows a Call / text button (works on any phone) */
+     messenger: Facebook username (opens m.me/username) | whatsapp / viber: number with country code, no + or spaces
+     phone: number with country code; shows a Call / text button */
   var CHAT = { messenger: '', whatsapp: '', viber: '', phone: '639911285139' };
-
   var chatHTML = '';
   if (CHAT.messenger) chatHTML += '<a class="button small chat-btn" href="https://m.me/' + CHAT.messenger + '" target="_blank" rel="noopener noreferrer">Chat on Messenger</a>';
   if (CHAT.viber) chatHTML += '<a class="button small chat-btn" href="viber://chat?number=%2B' + CHAT.viber + '">Chat on Viber</a>';
   if (CHAT.whatsapp) chatHTML += '<a class="button small chat-btn" href="https://wa.me/' + CHAT.whatsapp + '?text=Hi%20Jovanie%2C%20I%20need%20a%20website." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>';
-  if (CHAT.phone) chatHTML += '<a class="button small chat-btn phone-btn" href="tel:+' + CHAT.phone + '">Call / text 0' + CHAT.phone.slice(2, 5) + ' ' + CHAT.phone.slice(5, 8) + ' ' + CHAT.phone.slice(8) + '</a>';
+  if (CHAT.phone) chatHTML += '<a class="button small chat-btn" href="tel:+' + CHAT.phone + '">Call / text 0' + CHAT.phone.slice(2, 5) + ' ' + CHAT.phone.slice(5, 8) + ' ' + CHAT.phone.slice(8) + '</a>';
   if (chatHTML) {
-    document.querySelectorAll('[data-chat]').forEach(function (el) { el.innerHTML = chatHTML; el.hidden = false; });
-    var fcta = document.getElementById('float-cta');
-    if (fcta && CHAT.messenger) { fcta.textContent = 'Chat with me'; fcta.href = 'https://m.me/' + CHAT.messenger; fcta.target = '_blank'; fcta.rel = 'noopener noreferrer'; fcta.dataset.chat = '1'; }
+    $$('[data-chat]').forEach(function (el) { el.innerHTML = chatHTML; el.hidden = false; });
+    var fc0 = $('#float-cta');
+    if (fc0 && CHAT.messenger) { fc0.textContent = 'Chat with me'; fc0.href = 'https://m.me/' + CHAT.messenger; fc0.target = '_blank'; fc0.rel = 'noopener noreferrer'; }
   }
 
+  /* Theme toggle (preference saved in localStorage) */
+  var tt = $('#theme-toggle');
+  function paintTheme() {
+    var dark = root.dataset.theme === 'dark';
+    if (tt) { tt.setAttribute('aria-pressed', String(dark)); tt.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme'); }
+    var m = $('meta[name=theme-color]'); if (m) m.content = dark ? '#0f1a15' : '#f6f1e7';
+  }
+  paintTheme();
+  if (tt) tt.addEventListener('click', function () {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    paintTheme();
+  });
+
   /* Mobile menu */
-  var toggle = document.querySelector('.menu-toggle');
-  var nav = document.getElementById('nav');
+  var toggle = $('.menu-toggle'), nav = $('#nav');
   function setMenu(open) {
+    if (!toggle || !nav) return;
     nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
-  toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
-  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
-
-  /* Active nav link on scroll */
-  var links = {};
-  nav.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-  if ('IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === en.target.id && k !== 'contact'); });
-        }
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(links).concat(['home']).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
-
-    /* Gentle reveal */
-    var rv = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); rv.unobserve(en.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.card, .steps li, .project, .about-grid, .faq-list, .contact-panel').forEach(function (el) {
-      el.classList.add('reveal'); rv.observe(el);
-    });
-
-    /* Hide floating button while contact section is visible */
-    var fc = document.getElementById('float-cta');
-    var contact = document.getElementById('contact');
-    if (fc && contact) {
-      new IntersectionObserver(function (e) { fc.classList.toggle('hide', e[0].isIntersecting); }, { threshold: 0.15 }).observe(contact);
-    }
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); toggle.focus(); } });
   }
+
+  /* Nav highlight, reveals, counters */
+  var links = {};
+  if (nav) $$('a[href^="#"]', nav).forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  function stagger(el) { var sibs = el.parentElement ? $$('.reveal', el.parentElement) : []; el.style.setProperty('--rd', Math.min(sibs.indexOf(el), 5) * 80 + 'ms'); }
+  function count(el) {
+    var end = parseInt(el.dataset.count, 10); if (isNaN(end)) return;
+    if (reduce) { el.textContent = end; return; }
+    var t0 = null;
+    (function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / 1100, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(performance.now());
+  }
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === en.target.id); }); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['home', 'services', 'work', 'process', 'about'].forEach(function (id) { var s = doc.getElementById(id); if (s) spy.observe(s); });
+    var rv = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); rv.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.reveal').forEach(function (el) { stagger(el); rv.observe(el); });
+    var cv = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { count(en.target); cv.unobserve(en.target); } });
+    }, { threshold: .6 });
+    $$('[data-count]').forEach(function (el) { cv.observe(el); });
+    var fc = $('#float-cta'), contact = $('#contact');
+    if (fc && contact) new IntersectionObserver(function (e) { fc.classList.toggle('hide', e[0].isIntersecting); }, { threshold: .15 }).observe(contact);
+  } else {
+    $$('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Scroll progress, timeline progress, back-to-top (one rAF-throttled listener) */
+  var bar = $('#progress'), steps = $('#steps'), top = $('#to-top'), ticking = false;
+  function onScroll() {
+    ticking = false;
+    var h = root.scrollHeight - window.innerHeight, y = window.scrollY;
+    if (bar) bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    if (top) top.hidden = y < 700;
+    if (steps) { var r = steps.getBoundingClientRect(), p = (window.innerHeight * .6 - r.top) / r.height; steps.style.setProperty('--prog', Math.max(0, Math.min(1, p))); }
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+  if (top) top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  /* Desktop-only: card tilt + mouse-following orb */
+  if (canHover && !reduce) {
+    $$('.tilt').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 8 + 'deg');
+        c.style.setProperty('--rx', (.5 - (e.clientY - r.top) / r.height) * 8 + 'deg');
+      });
+      c.addEventListener('pointerleave', function () { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); });
+    });
+    var orb = $('.o1');
+    if (orb) window.addEventListener('pointermove', function (e) {
+      orb.style.translate = ((e.clientX / window.innerWidth - .5) * -60) + 'px ' + ((e.clientY / window.innerHeight - .5) * -60) + 'px';
+    }, { passive: true });
+  }
+
+  /* Project filter */
+  var fbtns = $$('.filters button');
+  fbtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      fbtns.forEach(function (x) { var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
+      $$('[data-cat]').forEach(function (p) { p.hidden = b.dataset.filter !== 'all' && p.dataset.cat !== b.dataset.filter; });
+    });
+  });
+
+  /* Screenshot gallery + lightbox */
+  var shotImg = $('#shot-img'), shotCap = $('#shot-cap'), main = $('#shot-open');
+  var tabs = $$('.shot-tabs button'), idx = 0;
+  function showShot(i) {
+    if (!tabs.length || !shotImg) return;
+    idx = (i + tabs.length) % tabs.length;
+    var t = tabs[idx];
+    tabs.forEach(function (x) { x.classList.toggle('on', x === t); });
+    shotImg.src = t.dataset.src; shotImg.width = t.dataset.w; shotImg.height = t.dataset.h; shotImg.alt = t.dataset.alt;
+    if (shotCap) shotCap.textContent = t.dataset.cap;
+    if (main) { main.classList.remove('swap'); void main.offsetWidth; main.classList.add('swap'); }
+  }
+  tabs.forEach(function (t, i) { t.addEventListener('click', function () { showShot(i); }); });
+
+  var lb = $('#lightbox'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'), lastFocus = null;
+  function paintLb() { var t = tabs[idx]; lbImg.src = t.dataset.src; lbImg.alt = t.dataset.alt; lbCap.textContent = t.dataset.cap + ' (' + (idx + 1) + ' of ' + tabs.length + ')'; }
+  if (lb && lbImg && main && tabs.length && typeof lb.showModal === 'function') {
+    main.addEventListener('click', function () { lastFocus = main; paintLb(); lb.showModal(); $('#lb-close').focus(); });
+    $('#lb-close').addEventListener('click', function () { lb.close(); });
+    $('#lb-prev').addEventListener('click', function () { showShot(idx - 1); paintLb(); });
+    $('#lb-next').addEventListener('click', function () { showShot(idx + 1); paintLb(); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { showShot(idx - 1); paintLb(); }
+      if (e.key === 'ArrowRight') { showShot(idx + 1); paintLb(); }
+    });
+    lb.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); }); /* Escape is handled natively by <dialog> */
+  } else if (main) { main.style.cursor = 'default'; main.disabled = true; }
 
   /* Copy email */
-  var copyBtn = document.getElementById('copy-email');
-  var status = document.getElementById('copy-status');
-  function say(msg) { status.textContent = msg; setTimeout(function () { status.textContent = ''; }, 3500); }
-  copyBtn.addEventListener('click', function () {
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(EMAIL).then(function () { say('Email copied ✓'); }, fallback);
-    } else { fallback(); }
+  var copyBtn = $('#copy-email'), status = $('#copy-status'), stT;
+  function say(msg) { if (!status) return; status.textContent = msg; clearTimeout(stT); stT = setTimeout(function () { status.textContent = ''; }, 3500); }
+  if (copyBtn) copyBtn.addEventListener('click', function () {
     function fallback() {
-      var t = document.createElement('textarea');
-      t.value = EMAIL; t.style.position = 'fixed'; t.style.opacity = '0';
-      document.body.appendChild(t); t.select();
-      try { document.execCommand('copy'); say('Email copied ✓'); } catch (e) { say('Press and hold the email to copy it.'); }
-      document.body.removeChild(t);
+      var t = doc.createElement('textarea'); t.value = EMAIL; t.style.cssText = 'position:fixed;opacity:0'; doc.body.appendChild(t); t.select();
+      try { doc.execCommand('copy'); say('Email copied ✓'); } catch (e) { say('Press and hold the email to copy it.'); }
+      doc.body.removeChild(t);
     }
+    var old = copyBtn.textContent;
+    function ok() { say('Email copied ✓'); copyBtn.textContent = 'Copied ✓'; setTimeout(function () { copyBtn.textContent = old; }, 2000); }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(EMAIL).then(ok, fallback); else fallback();
   });
 
-  /* Contact form: 2 taps -> opens email app (no backend needed) */
-  var form = document.getElementById('contact-form');
-  var gm = document.getElementById('gmail-fallback');
+  /* Service cards pre-select the project type */
+  var typeSel = $('#f-type');
+  $$('[data-pick]').forEach(function (a) { a.addEventListener('click', function () { if (typeSel) typeSel.value = a.dataset.pick; refresh(); }); });
+
+  /* Contact form: validation, then opens email app (no backend) */
+  var form = $('#contact-form'), gm = $('#gmail-fallback');
+  function field(id) { return $('#' + id); }
   function compose() {
-    var type = form.querySelector('input[name=type]:checked').value;
-    var extra = form.message.value.trim();
-    var who = document.getElementById('f-name').value.trim();
-    var subject = 'Project inquiry: ' + type;
-    var body = 'Hi Jovanie,\n\nI need help with: ' + type + '.\n' + (extra ? '\n' + extra + '\n' : '') + '\nPlease reply to this email. Thank you!\n\nMy name: ' + who;
-    return { subject: subject, body: body };
+    var g = function (id) { var f = field(id); return f ? f.value.trim() : ''; };
+    var body = 'Hi Jovanie,\n\nI need help with: ' + g('f-type') + '.\n\n' + g('f-msg') + '\n\nName: ' + g('f-name') + (g('f-biz') ? '\nBusiness: ' + g('f-biz') : '') + '\nReply to: ' + g('f-email');
+    return { subject: 'Project inquiry: ' + g('f-type'), body: body };
   }
-  function refresh() {
-    var m = compose();
-    gm.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + EMAIL + '&su=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
+  function refresh() { if (!form || !gm) return; var m = compose(); gm.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + EMAIL + '&su=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body); }
+  function check(id, errId, test, msg) {
+    var f = field(id), e = field(errId); if (!f || !e) return true;
+    var bad = !test(f.value.trim());
+    f.setAttribute('aria-invalid', String(bad)); e.textContent = bad ? msg : '';
+    return !bad;
   }
-  form.addEventListener('input', refresh); refresh();
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var m = compose();
-    window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
-  });
-
-
-  /* EOD screenshot gallery */
-  var shotImg = document.getElementById('shot-img');
-  var shotCap = document.getElementById('shot-cap');
-  var tabs = document.querySelectorAll('.shot-tabs button');
-  tabs.forEach(function (t) {
-    t.addEventListener('click', function () {
-      tabs.forEach(function (x) { x.classList.remove('on'); });
-      t.classList.add('on');
-      shotImg.src = t.dataset.src; shotImg.width = t.dataset.w; shotImg.height = t.dataset.h; shotImg.alt = t.dataset.alt;
-      shotCap.textContent = t.dataset.cap;
+  function validate() {
+    var a = check('f-name', 'e-name', function (v) { return v.length > 1; }, 'Please enter your name.');
+    var b = check('f-email', 'e-email', function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }, 'Please enter a valid email address.');
+    var c = check('f-msg', 'e-msg', function (v) { return v.length >= 10; }, 'Please describe your project in at least a few words.');
+    if (!a) field('f-name').focus(); else if (!b) field('f-email').focus(); else if (!c) field('f-msg').focus();
+    return a && b && c;
+  }
+  if (form) {
+    form.addEventListener('input', function (e) { refresh(); if (e.target.getAttribute && e.target.getAttribute('aria-invalid') === 'true') validate(); });
+    refresh();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) return;
+      var btn = $('#send-btn'), m = compose(), label = btn.innerHTML;
+      btn.disabled = true; btn.textContent = 'Opening your email app…';
+      window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
+      setTimeout(function () { btn.disabled = false; btn.innerHTML = label; }, 2500);
     });
-  });
-  var lb = document.getElementById('lightbox');
-  if (lb && lb.showModal) {
-    document.getElementById('shot-open').addEventListener('click', function () {
-      var li = document.getElementById('lb-img'); li.src = shotImg.src; li.alt = shotImg.alt; lb.showModal();
-    });
-    document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
-    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
-  } else {
-    document.getElementById('shot-open').style.cursor = 'default';
   }
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 })();
