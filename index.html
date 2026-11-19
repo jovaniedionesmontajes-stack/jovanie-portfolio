@@ -3,130 +3,223 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jovanie Montajes — AI-assisted digital solutions developer building practical web experiences around real business needs.">
+  <title>Jovanie Montajes — Web Developer in Davao, PH</title>
+  <meta name="description" content="Jovanie Montajes builds simple websites and web apps for businesses. Based in Davao, Philippines. Email jovaniedionesmontajes@gmail.com to start a project.">
   <meta name="theme-color" content="#111214">
-  <title>Jovanie Montajes — Digital Solutions Developer</title>
+  <meta property="og:title" content="Jovanie Montajes — Web Developer in Davao, PH">
+  <meta property="og:description" content="Simple websites and web apps for businesses. Send me a message about your project.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Jovanie Montajes home"><span class="brand-mark">JM</span><span>JOVANIE MONTAJES<span class="brand-dot">.</span></span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#work">Selected work</a><a href="#skills">Capabilities</a><a href="#process">Process</a>
-      <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Jovanie Montajes — back to top"><span class="brand-mark">JM</span><span class="brand-name">Jovanie Montajes</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">Contact me</a>
     </nav>
   </header>
 
-  <main id="top">
+  <main id="main">
+    <!-- HERO -->
     <section class="hero section-wrap">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR OPPORTUNITIES <span class="eyebrow-line"></span> DAVAO, PH</p>
-        <h1>I turn business<br>problems into <em>digital<br>experiences.</em></h1>
-        <p class="hero-sub">I'm Jovanie — an AI-assisted digital solutions developer focused on thoughtful planning, useful features, and websites built around real user and business needs.</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span> Open for projects · Davao, Philippines</p>
+        <h1>I build websites and web apps <em>that are easy to use.</em></h1>
+        <p class="hero-sub">Hi, I'm Jovanie from Davao. I make simple websites and tools for businesses. I explain every step in plain words.</p>
         <div class="hero-actions">
-          <a class="button button-light" href="#work">Explore my work <span>↘</span></a>
-          <a class="text-link" href="#contact">Get in touch <span>↗</span></a>
+          <a class="button button-primary" href="#contact">Start a project</a>
+          <a class="button button-ghost" href="#work">See my work</a>
+          <a class="hero-mail" href="mailto:jovaniedionesmontajes@gmail.com?subject=Project%20inquiry">or email me directly</a>
         </div>
-        <div class="hero-foot"><span>01 / STRATEGY</span><span>02 / BUILD</span><span>03 / IMPROVE</span></div>
+        <ul class="hero-points" aria-label="Quick facts">
+          <li>Simple words, no tech talk</li>
+          <li>Works on phones</li>
+          <li>I reply by email</li>
+        </ul>
       </div>
-      <div class="hero-visual">
-        <div class="visual-top"><span>PROFILE / 001</span><span>INDEPENDENT BUILDER</span></div>
-        <div class="portrait-frame">
-          <div class="portrait-orbit orbit-one"></div><div class="portrait-orbit orbit-two"></div>
-          <div class="portrait-inner">
-            <img src="assets/profile.png" alt="Portrait of Jovanie Montajes" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-            <div class="portrait-fallback">JM</div>
-          </div>
-          <span class="portrait-index">JM—26</span>
-          <span class="portrait-note">ANALYTICAL THINKING<br>MEETS CREATIVE BUILDING</span>
-        </div>
-        <div class="visual-bottom"><span>AI-ASSISTED DEVELOPMENT</span><span>↗</span></div>
-      </div>
-      <div class="hero-stamp">BUILD<br>WITH<br>INTENT<span>✳</span></div>
+      <figure class="hero-photo">
+        <div class="photo-frame"><img src="assets/profile.jpg" width="702" height="602" alt="Portrait of Jovanie Montajes in a black suit" fetchpriority="high"></div>
+        <figcaption><strong>Jovanie Montajes</strong><span>Web developer · Davao, PH</span></figcaption>
+      </figure>
     </section>
 
-    <section class="ticker" aria-label="Focus areas"><div class="ticker-track">BUSINESS-FIRST THINKING <b>✳</b> AI-ASSISTED DEVELOPMENT <b>✳</b> PRACTICAL WEB SOLUTIONS <b>✳</b> CONTINUOUS IMPROVEMENT <b>✳</b> BUSINESS-FIRST THINKING <b>✳</b></div></section>
-
-    <section id="about" class="section section-wrap about-section">
-      <div class="section-kicker"><span>01</span> / THE THINKING</div>
-      <div class="about-grid">
-        <h2>Good digital work<br>starts <em>before</em> the code.</h2>
-        <div class="about-copy">
-          <p class="lead">I approach web development by first understanding the problem, the people using the product, and the outcome the business needs.</p>
-          <p>I plan site structure, user journeys, and essential features before implementation. I use AI tools to support development, but I take responsibility for reviewing the output, making decisions, testing the experience, and improving the result.</p>
-          <div class="principles"><div><span>01</span><strong>Understand the need</strong></div><div><span>02</span><strong>Prioritize what matters</strong></div><div><span>03</span><strong>Build, test, refine</strong></div></div>
-        </div>
+    <!-- SERVICES -->
+    <section id="services" class="section section-wrap">
+      <p class="kicker">What I can do</p>
+      <h2>Tell me what you need. <em>I'll build it.</em></h2>
+      <div class="cards three">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">▤</span>
+          <h3>Business websites</h3>
+          <p>A fast website that works well on phones. It shows what you sell and makes it easy for customers to contact you.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">◫</span>
+          <h3>Web apps &amp; dashboards</h3>
+          <p>Simple tools for daily reports, checking numbers, and tracking tasks. Users log in, and you choose who can see what.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">✦</span>
+          <h3>Improve what you have</h3>
+          <p>Is your website or tool hard to use? I can look at it and make it clearer and easier.</p>
+        </article>
       </div>
+      <p class="section-cta">Not sure what you need? <a href="#contact">Send me a message and we will figure it out →</a></p>
     </section>
 
+    <!-- WORK -->
     <section id="work" class="section work-section">
       <div class="section-wrap">
-        <div class="section-kicker"><span>02</span> / SELECTED WORK</div>
-        <div class="work-heading"><h2>A real workflow.<br><em>A practical solution.</em></h2><p>One featured project, built around an operational need.</p></div>
-        <article class="project-card">
-          <div class="project-visual">
-            <div class="project-window">
-              <div class="window-bar"><span></span><span></span><span></span><small>OPERATIONS / OVERVIEW</small></div>
-              <div class="mock-dashboard">
-                <div class="mock-side"><b>EM.</b><i></i><i></i><i></i><i></i></div>
-                <div class="mock-main"><div class="mock-title">Executive Overview <small>DAILY OPERATIONS</small></div>
-                  <div class="mock-stats"><div><small>REPORTING</small><b>Daily EOD</b><span>Branch entries</span></div><div><small>MONITORING</small><b>Variances</b><span>Branch review</span></div><div><small>FOLLOW-UP</small><b>Action log</b><span>Next steps</span></div></div>
-                  <div class="mock-table"><div>BRANCH <span>STATUS / FOLLOW-UP</span></div><i></i><i></i><i></i><i></i></div>
+        <p class="kicker">My work</p>
+        <h2>A real tool <em>for a real job.</em></h2>
+        <article class="project">
+          <a class="project-visual" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the EOD Monitoring Matrix live project (opens in a new tab)">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><small>OPERATIONS / OVERVIEW</small></div>
+              <div class="mock-body">
+                <div class="mock-side"><b>EM</b><i></i><i></i><i></i></div>
+                <div class="mock-main">
+                  <div class="mock-title">Executive Overview</div>
+                  <div class="mock-stats"><div><small>REPORTING</small><b>Daily EOD</b></div><div><small>MONITORING</small><b>Variances</b></div><div><small>FOLLOW-UP</small><b>Action log</b></div></div>
+                  <div class="mock-rows"><i></i><i></i><i></i><i></i></div>
                 </div>
               </div>
             </div>
-            <span class="project-visual-label">SYSTEM STUDY / 001</span>
-          </div>
+            <span class="visual-hint">Click to open live project ↗</span>
+          </a>
           <div class="project-info">
-            <div class="project-meta"><span>01 — OPERATIONS DASHBOARD</span><span>LIVE PROJECT</span></div>
-            <h3>EOD Monitoring<br>Matrix</h3>
-            <p class="project-desc">A centralized tool for daily End-of-Day entries, monitoring branch variances, and tracking follow-up actions across branches.</p>
-            <div class="feature-list"><span>Daily EOD entries</span><span>Branch variance monitoring</span><span>Follow-up action tracking</span><span>Role-based login and access</span></div>
-            <div class="stack"><span>SUPABASE</span><span>VERCEL</span><span>WEB APP</span></div>
-            <a class="button button-outline" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span>↗</span></a>
-            <p class="small-note">Planned, designed, and developed independently with AI-assisted coding. The project uses Supabase and is deployed on Vercel.</p>
+            <p class="project-tag">Daily reports tool · Live project</p>
+            <h3>EOD Monitoring Matrix</h3>
+            <p class="project-problem"><strong>The problem:</strong> teams need one place to send end-of-day reports, see differences between branches, and track what to do next.</p>
+            <p class="project-solution"><strong>What I made:</strong> one web app for branches and managers.</p>
+            <ul class="checks">
+              <li>Daily End-of-Day reports</li>
+              <li>Checking differences between branches</li>
+              <li>Follow-up task tracking</li>
+              <li>Login with different access levels</li>
+            </ul>
+            <p class="chips"><span>Supabase</span><span>Vercel</span><span>Web app</span></p>
+            <a class="button button-dark" href="https://staff-monitoring-eod.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            <p class="note">I planned, designed, and built this myself, with help from AI coding tools. It is a personal project. I do not claim any client results or numbers.</p>
           </div>
         </article>
-        <p class="honesty-note"><span>NOTE /</span> This portfolio highlights a personal/project build. No client results, usage figures, or business impact metrics are claimed.</p>
       </div>
     </section>
 
-    <section id="skills" class="section section-wrap skills-section">
-      <div class="section-kicker"><span>03</span> / CAPABILITIES</div>
-      <div class="skills-heading"><h2>Tools are part<br>of the process.</h2><p>My focus is on combining practical web technologies with structured thinking and careful implementation.</p></div>
-      <div class="skills-grid">
-        <div class="skill-card"><span class="skill-number">01</span><h3>Web foundations</h3><p>HTML · CSS · JavaScript<br>Responsive layouts · UI behavior</p></div>
-        <div class="skill-card"><span class="skill-number">02</span><h3>Data & services</h3><p>Supabase · Firebase<br>Authentication · APIs · Webhooks</p></div>
-        <div class="skill-card"><span class="skill-number">03</span><h3>Build & ship</h3><p>Git · GitHub · Vercel<br>Testing · Debugging · Iteration</p></div>
-        <div class="skill-card"><span class="skill-number">04</span><h3>AI-assisted workflow</h3><p>ChatGPT · Claude · Gemini<br>VS Code · Cursor · Replit · Lovable · Bolt</p></div>
-      </div>
-      <p class="skills-footnote">Tools and technologies listed reflect my current hands-on experience; depth varies by tool and project.</p>
-    </section>
-
-    <section id="process" class="section process-section">
-      <div class="section-wrap">
-        <div class="section-kicker"><span>04</span> / HOW I WORK</div>
-        <h2>From unclear problem<br>to <em>useful product.</em></h2>
-        <div class="process-list">
-          <div><span>01</span><h3>Discover</h3><p>Understand the business objective, audience, constraints, and friction points.</p><b>ASK BETTER QUESTIONS</b></div>
-          <div><span>02</span><h3>Plan</h3><p>Map the structure, user journey, data needs, and essential features.</p><b>DEFINE THE RIGHT SCOPE</b></div>
-          <div><span>03</span><h3>Build</h3><p>Develop the core experience, using AI as an assistant and reviewing implementation decisions.</p><b>MAKE IT FUNCTIONAL</b></div>
-          <div><span>04</span><h3>Validate</h3><p>Test key flows, check responsive behavior, review issues, and refine based on evidence.</p><b>IMPROVE WITH PURPOSE</b></div>
+    <!-- ABOUT -->
+    <section id="about" class="section section-wrap about">
+      <div class="about-grid">
+        <div>
+          <p class="kicker">About me</p>
+          <h2>I think first, <em>then I code.</em></h2>
+        </div>
+        <div class="about-copy">
+          <p class="lead">First I learn the problem, who will use it, and what the business needs.</p>
+          <p>Then I plan the pages and the main features. I use AI tools like ChatGPT, Claude, Gemini, and Cursor to build faster. But I check every result, make the decisions, test it, and fix it myself.</p>
+          <ul class="principles">
+            <li><span>01</span> Learn what you need</li>
+            <li><span>02</span> Focus on what matters</li>
+            <li><span>03</span> Build, test, fix</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-wrap contact-section">
-      <div class="section-kicker"><span>05</span> / NEXT STEP</div>
-      <div class="contact-panel"><div><p class="eyebrow">HAVE A PROBLEM TO SOLVE?</p><h2>Let's make<br><em>something useful.</em></h2></div><div class="contact-side"><p>Open to opportunities in digital solutions development, web projects, and collaborative problem-solving.</p><a class="button button-light" href="mailto:YOUR_EMAIL@example.com">Email me <span>↗</span></a><small>Replace this placeholder with your preferred professional email.</small></div></div>
-      <footer><span>© <span id="year"></span> JOVANIE MONTAJES</span><span>BUILT WITH INTENT <b>✳</b></span><a href="#top">BACK TO TOP ↑</a></footer>
+    <!-- SKILLS -->
+    <section class="section section-wrap skills" aria-labelledby="skills-title">
+      <p class="kicker">My tools</p>
+      <h2 id="skills-title">The tools <em>I use.</em></h2>
+      <div class="cards four">
+        <div class="card slim"><h3>Web basics</h3><p>HTML, CSS, JavaScript, pages that fit any screen</p></div>
+        <div class="card slim"><h3>Data &amp; login</h3><p>Supabase, Firebase, user login, APIs, webhooks</p></div>
+        <div class="card slim"><h3>Publish &amp; fix</h3><p>Git, GitHub, Vercel, testing, fixing bugs</p></div>
+        <div class="card slim"><h3>AI tools</h3><p>ChatGPT, Claude, Gemini, VS Code, Cursor, Replit, Lovable, Bolt</p></div>
+      </div>
+      <p class="fine">These are tools I have used. I know some better than others.</p>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section process">
+      <div class="section-wrap">
+        <p class="kicker">How we work</p>
+        <h2>Four simple steps, <em>no surprises.</em></h2>
+        <ol class="steps">
+          <li><span class="step-num">1</span><div><h3>You send a message</h3><p>Tell me about your business and what you need. A few sentences is enough.</p></div></li>
+          <li><span class="step-num">2</span><div><h3>We plan</h3><p>I ask a few questions. Then we decide the pages and the most important features.</p></div></li>
+          <li><span class="step-num">3</span><div><h3>I build it</h3><p>I make the main parts first and show you my progress so you can tell me what you think.</p></div></li>
+          <li><span class="step-num">4</span><div><h3>I test and fix</h3><p>I test it on a phone and a computer, fix any problems, and check it again before it goes live.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-wrap faq">
+      <p class="kicker">FAQ</p>
+      <h2>Common questions.</h2>
+      <div class="faq-list">
+        <details><summary>I don't know much about tech. Is that okay?</summary><p>Yes. I use simple words and explain each step, so you always know what is happening.</p></details>
+        <details><summary>What should I write in my first message?</summary><p>Tell me about your business, what you want to make or fix, and your deadline if you have one. Links to sites you like help too, but you don't need them.</p></details>
+        <details><summary>How can I contact you?</summary><p>Email is best: <a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>. Or use the form below.</p></details>
+        <details><summary>Can I see an example?</summary><p>Yes. The <a href="#work">EOD Monitoring Matrix</a> is live. You can open it anytime.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-wrap contact">
+      <div class="contact-panel">
+        <div class="contact-intro">
+          <p class="kicker dark">Contact</p>
+          <h2>Have a project?</h2>
+          <p>Send me a short message. I will reply by email.</p>
+          <div class="email-box">
+            <span class="email-label">My email</span>
+            <a class="email-link" href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
+            <div class="email-actions">
+              <button type="button" class="button button-dark small" id="copy-email" data-email="jovaniedionesmontajes@gmail.com">Copy email</button>
+              <a class="button button-outline-dark small" id="gmail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=jovaniedionesmontajes@gmail.com&su=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+            </div>
+            <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <h3>Send a quick message</h3>
+          <fieldset>
+            <legend>1. What do you need?</legend>
+            <div class="choices">
+              <label><input type="radio" name="type" value="A business website" checked><span>Business website</span></label>
+              <label><input type="radio" name="type" value="A web app or dashboard"><span>Web app / dashboard</span></label>
+              <label><input type="radio" name="type" value="Improve an existing site or tool"><span>Improve my site</span></label>
+              <label><input type="radio" name="type" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+          <label class="opt" for="f-msg">2. Anything to add? <em>(optional)</em></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Your business name, deadline, or links you like"></textarea>
+          <button class="button button-dark" type="submit">Send message <span aria-hidden="true">→</span></button>
+          <p class="form-help" id="form-help">Your email app will open with the message ready. Just press Send. No email app? <a id="gmail-fallback" href="#" target="_blank" rel="noopener noreferrer">Open in Gmail</a> or tap “Copy email”.</p>
+        </form>
+      </div>
+      <footer>
+        <span>© <span id="year">2026</span> Jovanie Montajes · Davao, PH</span>
+        <a href="mailto:jovaniedionesmontajes@gmail.com">jovaniedionesmontajes@gmail.com</a>
+        <a href="#top">Back to top ↑</a>
+      </footer>
     </section>
   </main>
+
+  <a class="float-cta" id="float-cta" href="#contact" aria-label="Contact Jovanie">Contact me</a>
   <script src="script.js"></script>
 </body>
 </html>
